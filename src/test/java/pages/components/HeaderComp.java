@@ -14,6 +14,8 @@ public class HeaderComp {
 
     }
 
+    @FindBy(xpath = "//*[text()='Become a User']")
+    public WebElement becomeAuser; // Become a User butonu
 
 }
 
