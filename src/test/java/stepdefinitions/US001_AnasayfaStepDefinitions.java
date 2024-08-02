@@ -16,7 +16,7 @@ public class US001_AnasayfaStepDefinitions {
     HeaderComp headerComp = new HeaderComp();
     LoginPage loginPage=new LoginPage();
 
-    @Given("Kullanici {string} gider")
+    @Given("Kullanici {istenenUrlAdi} gider")
     public void kullanici_gider(String istenenUrlAdi) {
         Driver.getDriver().get(ConfigReader.getProperty(istenenUrlAdi));
 
