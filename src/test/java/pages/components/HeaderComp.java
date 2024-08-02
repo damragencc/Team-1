@@ -17,6 +17,12 @@ public class HeaderComp {
     @FindBy(xpath = "//*[text()='Become a User']")
     public WebElement becomeAuser; // Become a User butonu
 
+    @FindBy (xpath = "//*[@class='user-img']")
+    public WebElement insanIconu; // Anasayfa sağ üst köşedeki kullanıcı girişi insan ikonu
+
+    @FindBy (xpath = "(//*[@class='dropdown-item'])[1]")
+    public WebElement dropDownDashboard;
+
 }
 
 
