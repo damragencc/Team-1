@@ -17,6 +17,14 @@ public class HeaderComp {
     @FindBy(xpath = "//*[text()='Become a User']")
     public WebElement becomeAuser; // Become a User butonu
 
+    @FindBy(xpath = "//a[text()='Contact US']")
+    public WebElement headerContactUsLink;//anasayfa Contact us linki
+
+
+    @FindBy(xpath = " (//a[text()='Login'])[1]")
+    public WebElement mainPageLoginButton;// anasayfa Login butonu
+
+
 }
 
 
