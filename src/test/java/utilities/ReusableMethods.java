@@ -563,6 +563,9 @@ public class    ReusableMethods {
 
     public static void scrollAndClickToElement(WebElement webElement) {
         new Actions(Driver.getDriver()).scrollToElement(webElement).perform();
+
+
+
         webElement.click();
     }
 

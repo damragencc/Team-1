@@ -12,10 +12,12 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@E2E",
+        tags = "@Damra",
         dryRun = true
+
+
 )
-public class runner{
+public class Runner {
     /*
         Runner class'i framework'umuzun build edilmesinde onemlidir
         Java olmayan feature dosyalari ile
