@@ -56,15 +56,19 @@ public class US012_UserCompanyFollow {
     public void user_click_on_the_button_the_services_should_be_visible(String string) {
             HeaderComp.shopDetailsServices.click();
             HeaderComp.services.isDisplayed();
-
-
-        }
+    }
+    @Then("User address and fee information should be displayed when any of the service cards is clicked")
+    public void user_address_and_fee_information_should_be_displayed_when_any_of_the_service_cards_is_clicked() {
+            HeaderComp.servicesAddress.isDisplayed();
+            HeaderComp.labelAmount.isDisplayed();
 
     }
 
-
-
-
-
-
 }
+
+
+
+
+
+
+

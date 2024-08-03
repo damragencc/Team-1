@@ -46,6 +46,13 @@ public class HeaderComp {
 
     @FindBy(xpath = "//*[h2='Services']")
     public static WebElement services; //Shop details sayfasındaki servislerin listelendiğiyerdeki servicess yazısının locate
+
+    @FindBy(xpath = "fas fa-location-arrow")
+    public static WebElement servicesAddress; //Servis adres bilgisi
+
+    @FindBy(xpath = "//*[@class='label-amount']")
+    public static WebElement labelAmount;  //Servisin fiyat bilgisi
+
 }
 
 

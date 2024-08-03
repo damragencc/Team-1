@@ -48,4 +48,4 @@ Feature: As a user, I would like to have a page where I can follow the companies
 
   Scenario: TC11 Address and fee information should be displayed when any of the service cards is clicked
 
-    Then User
+    Then User address and fee information should be displayed when any of the service cards is clicked
