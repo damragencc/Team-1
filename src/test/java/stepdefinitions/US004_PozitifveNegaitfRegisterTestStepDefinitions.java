@@ -17,6 +17,7 @@ public class US004_PozitifveNegaitfRegisterTestStepDefinitions {
     RegisterPage registerPage=new RegisterPage();
 
 
+
     @Then("Header bolumunde bulunan Become a User butonunu goruntuler")
     public void header_bolumunde_bulunan_become_a_user_butonunu_goruntuler() {
 
@@ -119,13 +120,19 @@ public class US004_PozitifveNegaitfRegisterTestStepDefinitions {
     public void cinsiyet_olarak_erkek_butouna_ve_onay_butunona_tıklar() {
         registerPage.cinsiyetErkekButonu.click(); registerPage.ıAgreeButonu.click();
     }
+    /*
     @When("register butonuna tıklar")
     public void Register_butonuna_tıklar() {
-        registerPage.registerButonu.click();
+
+
+        Assert.assertFalse(registerPage.registerButonu.isEnabled());
     }
+
+     */
+
     @Then("kayit olamadigini test eder")
     public void kayit_olamadigini_test_eder() {
-        Assert.assertTrue(registerPage.registerButonu.isDisplayed());
+        Assert.assertFalse(registerPage.registerButonu.isEnabled());
     }
 
 
