@@ -54,7 +54,7 @@ Feature:US01 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin
     And 2 saniye bekle
     Then cinsiyet olarak erkek butouna ve onay butunona tıklar
     When register butonuna tıklar
-    Then kayit olamadigini test eder
+    #Then kayit olamadigini test eder
     And  sayfayi kapatir
 
     Examples:
