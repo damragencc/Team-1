@@ -568,5 +568,9 @@ public class    ReusableMethods {
 
         webElement.click();
     }
+    public static String webElementTextAl(WebElement element){
+        String elementText=element.getText();
+        return elementText;
+    }
 
 }

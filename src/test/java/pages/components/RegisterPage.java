@@ -10,13 +10,11 @@ import org.openqa.selenium.support.ui.Select;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import javax.xml.xpath.XPath;
-
 import static utilities.Driver.driver;
 
-public class LoginPage {
+public class RegisterPage {
 
-    public LoginPage(){
+    public RegisterPage(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -41,6 +39,12 @@ public class LoginPage {
     @FindBy(id = "user_password")
     public WebElement loginPasswordKutusu;
 
+    @FindBy (id = "emaillogin_submit")
+    public WebElement loginButonu;
+
+    @FindBy (id = "emailregistration_finals")
+    public WebElement enterButonu;
+
     @FindBy(id = "user_mobile")
     public WebElement loginMobiledKutusu;
 
@@ -59,7 +63,7 @@ public class LoginPage {
 
 
 
-    public void LoginForm(String name,String email,String password){
+    public void RegisterForm(String name,String email,String password){
 
         loginNameKutusu.click();
         actions.sendKeys(ConfigReader
@@ -81,7 +85,6 @@ public class LoginPage {
         Select select = new Select(selectElement);
         select.selectByValue(value);
     }
-
 
 
 

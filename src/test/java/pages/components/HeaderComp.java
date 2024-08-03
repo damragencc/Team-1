@@ -35,8 +35,18 @@ public class HeaderComp {
     @FindBy(xpath = "//span[@class='user-img']")
     public WebElement profilIkonu;
 
+    @FindBy (xpath = "//*[@class='user-img']")
+    public WebElement insanIconu; // Anasayfa sağ üst köşedeki kullanıcı girişi insan ikonu
+
+    @FindBy (xpath = "(//*[@class='dropdown-item'])[1]")
+    public WebElement dropDownDashboard;
+
+    @FindBy(xpath = "//a[text()='Contact US']")
+    public WebElement headerContactUsLink;//anasayfa Contact us linki
 
 
+    @FindBy(xpath = " (//a[text()='Login'])[1]")
+    public WebElement mainPageLoginButton;// anasayfa Login butonu
 
 
 
