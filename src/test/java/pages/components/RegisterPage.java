@@ -39,6 +39,12 @@ public class RegisterPage {
     @FindBy(id = "user_password")
     public WebElement loginPasswordKutusu;
 
+    @FindBy (id = "emaillogin_submit")
+    public WebElement loginButonu;
+
+    @FindBy (id = "emailregistration_finals")
+    public WebElement enterButonu;
+
     @FindBy(id = "user_mobile")
     public WebElement loginMobiledKutusu;
 
