@@ -55,6 +55,8 @@ public class US012_UserCompanyFollow {
     @Then("User click on the {string} button, the services should be visible")
     public void user_click_on_the_button_the_services_should_be_visible(String string) {
             HeaderComp.shopDetailsServices.click();
+            HeaderComp.services.isDisplayed();
+
 
         }
 

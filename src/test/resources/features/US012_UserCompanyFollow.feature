@@ -45,3 +45,7 @@ Feature: As a user, I would like to have a page where I can follow the companies
   Scenario: TC10 When you click on the "Services" button, the services should be visible
 
     Then User click on the "Services" button, the services should be visible
+
+  Scenario: TC11 Address and fee information should be displayed when any of the service cards is clicked
+
+    Then User

@@ -44,7 +44,8 @@ public class HeaderComp {
     @FindBy(xpath = "(//*[@class=\"btn btn-secondary\"])[1]")
     public static WebElement shopDetailsServices; //header>categories>events>shop>visitStoreText>Services
 
-
+    @FindBy(xpath = "//*[h2='Services']")
+    public static WebElement services; //Shop details sayfasındaki servislerin listelendiğiyerdeki servicess yazısının locate
 }
 
 
