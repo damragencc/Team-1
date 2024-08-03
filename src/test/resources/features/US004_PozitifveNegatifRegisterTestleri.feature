@@ -6,6 +6,7 @@ Feature:US01 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin
     When Become a User butonuna tiklar
 
 
+
   Scenario: TC01 Kullanıcının ana sayfaya erisebilmeli ve  Become a User bağlantısını tıklayabilmesi gerekir.
 
     Then Header bolumunde bulunan Become a User butonunu goruntuler
@@ -38,6 +39,38 @@ Feature:US01 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin
     Examples:
       |Name |Mail|Password|MobileNumber|ulke|
       |userName |userMail|userPassword|userMobileNumber|userUlke|
+
+
+
+
+  Scenario Outline: TC04 gecersiz name ile kayıt olamamali
+
+    Given "<Name>" girer
+    And 2 saniye bekle
+    When "userMail" "userPassword" bilgilerini girer
+    Then checkboxa tıklar
+    And 3 saniye bekle
+    When  "userUlke" secer ve "userMobileNumber" girer
+    And 2 saniye bekle
+    Then cinsiyet olarak erkek butouna ve onay butunona tıklar
+    When register butonuna tıklar
+    Then kayit olamadigini test eder
+    And  sayfayi kapatir
+
+    Examples:
+      |Name|
+      |gecersizName|
+
+
+
+
+
+
+
+
+
+
+
 
 
 
