@@ -1,9 +1,11 @@
 package pages.components;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class HeaderComp {
 
@@ -48,8 +50,16 @@ public class HeaderComp {
     @FindBy(xpath = " (//a[text()='Login'])[1]")
     public WebElement mainPageLoginButton;// anasayfa Login butonu
 
-
-
+    public void performLogIn(String mail, String password) {
+        headerLoginButton.click();
+        emailIdBox.sendKeys(mail);
+        ReusableMethods.wait(1);
+        emailIdBox.sendKeys(" ", Keys.ENTER);
+        ReusableMethods.wait(1);
+        emailLoginButton.click();
+        passwordBox.sendKeys(password);
+        passwordEnterButton.click();
+    }
 }
 
 
