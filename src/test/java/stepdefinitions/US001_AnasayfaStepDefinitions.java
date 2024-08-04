@@ -5,8 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import pages.components.HeaderComp;
-import pages.components.LoginPage;
-import pages.components.TestPage;
+import pages.components.RegisterPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -14,9 +13,9 @@ public class US001_AnasayfaStepDefinitions {
 
 
     HeaderComp headerComp = new HeaderComp();
-    LoginPage loginPage=new LoginPage();
+    RegisterPage loginPage=new RegisterPage();
 
-    @Given("Kullanici {istenenUrlAdi} gider")
+    @Given("Kullanici {string} gider")
     public void kullanici_gider(String istenenUrlAdi) {
         Driver.getDriver().get(ConfigReader.getProperty(istenenUrlAdi));
 

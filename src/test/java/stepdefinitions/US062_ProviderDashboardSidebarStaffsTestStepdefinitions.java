@@ -3,7 +3,9 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
-import pages.components.LoginPage;
+import pages.components.LoginLogoutPage;
+
+import pages.components.RegisterPage;
 import pages.components.TestPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -11,8 +13,10 @@ import utilities.Driver;
 public class US062_ProviderDashboardSidebarStaffsTestStepdefinitions {
 
     HeaderComp headerComp = new HeaderComp();
-    LoginPage loginPage=new LoginPage();
+
     TestPage testPage= new TestPage();
+    RegisterPage registerPage=new RegisterPage();
+
 
     @Given("Kullanici {string} adresine gider")
     public void kullanici_adresine_gider(String istenenUrlAdi) {
@@ -21,26 +25,26 @@ public class US062_ProviderDashboardSidebarStaffsTestStepdefinitions {
 
     @Given("Anasayfayi goruntulenir")
     public void anasayfayi_goruntulenir() {
-        loginPage.anaSayfaGoruntuleme.isDisplayed();
+        registerPage.anaSayfaGoruntuleme.isDisplayed();
     }
 
     @Given("Anasayfa sag ust kisimda Login butonuna tiklanir.")
     public void anasayfa_sag_ust_kisimda_login_butonuna_tiklanir() {
-        loginPage.loginNameKutusu.click();
+        registerPage.loginNameKutusu.click();
     }
 
     @Given("Acilan Login kutucugunda Email ID kismina gecerli provider e-mail girilir ve Login butonuna tiklanir")
     public void acilan_login_kutucugunda_email_id_kismina_gecerli_provider_e_mail_girilir_ve_login_butonuna_tiklanir() {
-        loginPage.loginMailKutusu.click();
-        loginPage.loginMailKutusu.sendKeys(ConfigReader.getProperty("providerEmail"));
-        loginPage.loginButonu.click();
+        registerPage.loginMailKutusu.click();
+        registerPage.loginMailKutusu.sendKeys(ConfigReader.getProperty("providerEmail"));
+        registerPage.loginButonu.click();
     }
 
     @Given("Acilan Password kutucugunda gecerli sifre girilir ve Enter butonuna tiklanir")
     public void acilan_password_kutucugunda_gecerli_sifre_girilir_ve_enter_butonuna_tiklanir() {
-        loginPage.loginPasswordKutusu.click();
-        loginPage.loginPasswordKutusu.sendKeys("providerPassword");
-        loginPage.enterButonu.click();
+        registerPage.loginPasswordKutusu.click();
+        registerPage.loginPasswordKutusu.sendKeys("providerPassword");
+        registerPage.enterButonu.click();
     }
 
     @Given("Tekrar anasayfaya donuldugunde sag ust kisimda gorunen insan figuru resmine tiklanir")
