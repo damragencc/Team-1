@@ -22,7 +22,7 @@ public class HeaderComp {
     @FindBy(xpath = "//a[@class='btn btn-signin']")
     public WebElement headerLoginButton; // Login butonu
 
-    @FindBy(xpath = "//input[@class='form-control login_email']")
+    @FindBy(xpath = "//*[@id='login_email']")
     public WebElement emailIdBox; // Login butonu - email id box
 
     @FindBy(xpath = "//button[@id='emaillogin_submit']")
@@ -50,6 +50,19 @@ public class HeaderComp {
     @FindBy(xpath = " (//a[text()='Login'])[1]")
     public WebElement mainPageLoginButton;// anasayfa Login butonu
 
+
+    @FindBy(xpath = "//*[text()='Categories ']")
+    public WebElement categoriesButton;  // Anasayfa categories
+
+    @FindBy(xpath = "(//*[text()='Home Services'])[1]")
+    public WebElement categoriesHomeServisButton; //Categories-Home Service
+
+
+    @FindBy(xpath = "//*[text()='Shops']")
+    public WebElement shopsButton;
+
+    @FindBy(xpath = "//*[text()='Shops & Services']")
+    public WebElement shopsMenuShopsService;      //Shops menudeki Shops % Service
 
 
 
