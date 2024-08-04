@@ -11,6 +11,7 @@ Feature: Kayıtlı bir kullanıcı (User) olarak sayfadan güvenli bir sekilde c
     When Password bolumune "userPassword1" bilgileri giris yapar.
     Then Enter butonuna tiklar.
     And Header bolumundeki profil ikonunun goruntulendigi dogrulanir.
+    And sayfayi kapatir
 
 
 

@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import pages.components.HeaderComp;
 import pages.components.LoginLogoutPage;
@@ -19,7 +20,11 @@ public class US036_ProviderLogoutStepDefinitions {
 
     @Given("Gecerli  {string} adresini girer")
     public void gecerli_adresini_girer(String providerEmail) {
+
+
        loginLogoutPage.mainPageLoginFormEmailbox.sendKeys(ConfigReader.getProperty("providerEmail"));
+
+        
     }
     @Given("Gecerli {string} girer")
     public void gecerli_girer(String string) {

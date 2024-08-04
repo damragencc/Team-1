@@ -1,5 +1,5 @@
 Feature: Bir kullanici olarak site ana sayfasina erisim saglayabilmek istiyorum
-  @Damra
+
   Scenario: TC01 Kullanıcı ana sayfaya erişebilmeli ve bilgileri görebilmelidir
 
 
