@@ -50,6 +50,11 @@ public class HeaderComp {
     @FindBy(xpath = " (//a[text()='Login'])[1]")
     public WebElement mainPageLoginButton;// anasayfa Login butonu
 
+
+
+
+}
+
     public void performLogIn(String mail, String password) {
         headerLoginButton.click();
         emailIdBox.sendKeys(mail);
@@ -61,5 +66,6 @@ public class HeaderComp {
         passwordEnterButton.click();
     }
 }
+
 
 
