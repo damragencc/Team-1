@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import org.openqa.selenium.support.ui.Select;
 import pages.components.HeaderComp;
 import pages.components.LoginLogoutPage;
+import pages.components.LoginPage;
 import utilities.ConfigReader;
 import utilities.ReusableMethods;
 
@@ -11,9 +12,10 @@ public class US036_ProviderLogoutStepDefinitions {
     HeaderComp headerComp = new HeaderComp();
     LoginLogoutPage loginLogoutPage=new LoginLogoutPage();
 
+
     @Given("Login butonuna tiklar")
     public void login_butonuna_tiklar() {
-        headerComp.mainPageLoginButton.click();
+
         ReusableMethods.bekle(2);
     }
 
