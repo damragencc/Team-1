@@ -78,6 +78,7 @@ public void performLogIn(String mail, String password) {
     passwordBox.sendKeys(password);
     passwordEnterButton.click();
 }
+
 }
 
 
