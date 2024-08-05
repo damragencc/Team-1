@@ -1,4 +1,6 @@
 
+
+
 package pages.components;
 
 import org.openqa.selenium.Keys;
@@ -10,10 +12,15 @@ import utilities.ReusableMethods;
 
 public class HeaderComp {
 
+
     public HeaderComp(){
 
         PageFactory.initElements(Driver.getDriver(),this);
 
+
+
+    public HeaderComp() {
+        PageFactory.initElements(Driver.getDriver(), this);
 
     }
 
@@ -38,14 +45,27 @@ public class HeaderComp {
     @FindBy(xpath = "//span[@class='user-img']")
     public WebElement profilIkonu;
 
+
     @FindBy (xpath = "//*[@class='user-img']")
     public WebElement insanIconu; // Anasayfa sağ üst köşedeki kullanıcı girişi insan ikonu
 
     @FindBy (xpath = "(//*[@class='dropdown-item'])[1]")
+
+    @FindBy(xpath = "//*[@class='user-img']")
+    public WebElement insanIconu; // Anasayfa sağ üst köşedeki kullanıcı girişi insan ikonu
+
+    @FindBy(xpath = "(//*[@class='dropdown-item'])[1]")
+
     public WebElement dropDownDashboard;
 
     @FindBy(xpath = "//a[text()='Contact US']")
     public WebElement headerContactUsLink;//anasayfa Contact us linki
+
+
+
+    @FindBy(xpath = " (//a[text()='Login'])[1]")
+    public WebElement mainPageLoginButton;// anasayfa Login butonu
+
 
 
     @FindBy(xpath = " (//a[text()='Login'])[1]")
@@ -59,11 +79,15 @@ public class HeaderComp {
     public WebElement categoriesHomeServisButton; //Categories-Home Service
 
 
+
+
+
     @FindBy(xpath = "//*[text()='Shops']")
     public WebElement shopsButton;
 
     @FindBy(xpath = "//*[text()='Shops & Services']")
     public WebElement shopsMenuShopsService;      //Shops menudeki Shops % Service
+
 
 
 
@@ -88,4 +112,17 @@ public void performLogIn(String mail, String password) {
 
 
 
+
+
+    public void performLogIn(String mail, String password) {
+        headerLoginButton.click();
+        emailIdBox.sendKeys(mail);
+        ReusableMethods.wait(1);
+        emailIdBox.sendKeys(" ", Keys.ENTER);
+        ReusableMethods.wait(1);
+        emailLoginButton.click();
+        passwordBox.sendKeys(password);
+        passwordEnterButton.click();
+    }
+}
 

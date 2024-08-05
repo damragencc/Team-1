@@ -10,4 +10,7 @@ Feature: Kayıtlı bir kullanıcı (User) olarak sayfadan güvenli bir sekilde c
     And sayfayi kapatir
 
 
+  Scenario: TC02 Kulanici
+
+
 
