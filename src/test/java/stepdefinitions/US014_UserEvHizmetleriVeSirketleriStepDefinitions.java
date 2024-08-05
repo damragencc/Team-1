@@ -4,11 +4,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
 import pages.components.RegisterPage;
 import pages.components.TestPage;
+import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.awt.event.KeyEvent;
 
 public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
 
@@ -107,6 +112,8 @@ public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
 
     @Given("{string} hizmetine tıklar")
     public void leak_detection_hizmetine_tıklar(String leakDetection) {
+
+        ReusableMethods.bekle(2);
       testPage.serviceLeakDetection.click();
     }
 
@@ -159,12 +166,26 @@ public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
 
         Assert.assertTrue(testPage.searchButonu.isEnabled());
 
-    }
-    @When("{string}'da istenilen bilgileri girer")
-    public void form_da_istenilen_bilgileri_girer(String form) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-
 }
+
+    @When("{string}'da {string},{string},{string},{string},{string},{string} bilgilerini girer")
+    public void da_sort_by_keyword_price_range_bilgilerini_girer(String form, String location, String sortBy,String keyword, String Categories,String subCategory,String priceRange) throws InterruptedException {
+
+             testPage.filterLocationTextBox.click();
+             testPage.filterLocationTextBox.sendKeys(ConfigReader.getProperty(location));
+             testPage.filterSortByTextBox.click();
+             testPage.sortByDropDownMenuPriceLowToHigh.click();
+             registerPage.beklemeSuresi();
+             testPage.filterKeywordtextBox.sendKeys(ConfigReader.getProperty(keyword));
+
+             testPage.filterSubCategoryTextBox.click();
+
+         actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).perform();
+
+
+
+          registerPage.beklemeSuresi();
+
+    }
+
+    }
