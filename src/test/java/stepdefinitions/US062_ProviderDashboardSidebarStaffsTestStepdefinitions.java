@@ -1,14 +1,10 @@
 package stepdefinitions;
 
-import dev.failsafe.AsyncExecution;
-import dev.failsafe.internal.util.Durations;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
-import pages.components.LoginLogoutPage;
 
 import pages.components.RegisterPage;
 import pages.components.TestPage;
