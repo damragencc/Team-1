@@ -109,6 +109,49 @@ public class TestPage {
     public WebElement leakDetectionRelatedServicesText;
 
 
+    //Filter iconu Form Bilgileri Text Bilgileri
+
+    @FindBy(xpath = "//*[@id='filter_search']")
+    public WebElement filterIconu;
+
+    @FindBy(xpath = "//*[text()='Location']")
+    public WebElement filterLocation;
+
+    @FindBy(xpath = "//*[text()='Sort By']")
+    public WebElement filterSortBy;
+
+    @FindBy(xpath = "//*[text()='Keyword']")
+    public WebElement filterKeyword;
+
+    @FindBy(xpath = "//*[text()='Categories']")
+    public WebElement filterCategories;
+
+    @FindBy(xpath = "//*[text()='Sub Category']")
+    public WebElement filterSubCategory;
+
+    @FindBy(xpath = "//*[text()='Price Range']")
+    public WebElement filterPriceRange;
+
+
+    //Filter iconu Form Bilgileri TextBox Bilgileri
+
+
+
+
+    @FindBy(xpath = "(//*[@id='service_location'])[1]")
+    public WebElement filterLocationTextBox;
+
+    @FindBy(xpath = "(//*[text()='Sort By'])[3]")
+    public WebElement filterSortByTextBox;
+
+    @FindBy(xpath = "//*[@id='common_search']")
+    public WebElement filterKeywordtextBox;
+
+    @FindBy(xpath = "(//*[text()='All Categories'])[2]")
+    public WebElement filterAllCategoriesTextBox;
+
+    @FindBy(id = "select2-subcategories-container")
+    public WebElement filterSubCategoryTextBox;
 
 
 
