@@ -12,6 +12,7 @@ public class US021_ContactUsStepDefinitions {
     HeaderComp headerComp = new HeaderComp();
     ContactUsPage contactUsPage = new ContactUsPage();
 
+
     @Given("Kullanıcı ilgili urle gider")
     public void kullanıcı_ilgili_urle_gider() {
         Driver.getDriver().get(ConfigReader.getProperty("masterUrl"));

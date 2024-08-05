@@ -5,7 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import pages.components.HeaderComp;
 import pages.components.LoginLogoutPage;
-import pages.components.LoginPage;
+
 import utilities.ConfigReader;
 import utilities.ReusableMethods;
 

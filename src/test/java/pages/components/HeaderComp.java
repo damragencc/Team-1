@@ -66,18 +66,18 @@ public class HeaderComp {
 
 
 
-}
 
-    public void performLogIn(String mail, String password) {
-        headerLoginButton.click();
-        emailIdBox.sendKeys(mail);
-        ReusableMethods.wait(1);
-        emailIdBox.sendKeys(" ", Keys.ENTER);
-        ReusableMethods.wait(1);
-        emailLoginButton.click();
-        passwordBox.sendKeys(password);
-        passwordEnterButton.click();
-    }
+
+public void performLogIn(String mail, String password) {
+    headerLoginButton.click();
+    emailIdBox.sendKeys(mail);
+    ReusableMethods.wait(1);
+    emailIdBox.sendKeys(" ", Keys.ENTER);
+    ReusableMethods.wait(1);
+    emailLoginButton.click();
+    passwordBox.sendKeys(password);
+    passwordEnterButton.click();
+}
 }
 
 
