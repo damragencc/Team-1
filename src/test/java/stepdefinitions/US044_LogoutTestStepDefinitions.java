@@ -28,11 +28,6 @@ public class US044_LogoutTestStepDefinitions {
     public void anasayfayi_goruntulendigini_dogrular() {
         registerPage.anaSayfaGoruntuleme.isDisplayed();
     }
-    
-    @When("Login butonuna tiklar.")
-    public void login_butonuna_tiklar() {
-        headerComp.headerLoginButton.click();
-    }
 
     @When("Email ID bolumune {string} bilgileri giris yapar")
     public void email_ıd_bolumune_bilgileri_giris_yapar(String email) {
