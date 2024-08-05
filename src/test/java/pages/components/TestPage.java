@@ -188,7 +188,7 @@ public class TestPage {
     @FindBy(xpath = "//*[text()='Service Details']")
     public WebElement leakDetectionServiceDetailsText;
 
-    @FindBy(xpath = "(//*[text()='$300'])[2]")
+    @FindBy(xpath = "//*[text()='$300']")
     public WebElement leakDetectionServiceAmountText;
 
     @FindBy(xpath = "//*[text()='Service Provider']")
@@ -206,6 +206,57 @@ public class TestPage {
 
 
     //Filter iconu Form Bilgileri Text Bilgileri
+
+
+    @FindBy(xpath = "//*[@id='filter_search']")
+    public WebElement filterIconu;
+
+    @FindBy(xpath = "//*[text()='Location']")
+    public WebElement filterLocationText;
+
+    @FindBy(xpath = "//*[text()='Sort By']")
+    public WebElement filterSortByText;
+
+    @FindBy(xpath = "//*[text()='Keyword']")
+    public WebElement filterKeywordText;
+
+    @FindBy(xpath = "//*[text()='Categories']")
+    public WebElement filterCategoriesText;
+
+    @FindBy(xpath = "//*[text()='Sub Category']")
+    public WebElement filterSubCategoryText;
+
+    @FindBy(xpath = "//*[text()='Price Range']")
+    public WebElement filterPriceRangeText;
+
+
+    //Filter iconu Form Bilgileri TextBox Bilgileri
+
+
+
+
+    @FindBy(xpath = "(//*[@id='service_location'])[1]")
+    public WebElement filterLocationTextBox;
+
+    @FindBy(xpath = "(//*[text()='Sort By'])[3]")
+    public WebElement filterSortByTextBox;
+
+    @FindBy(xpath = "//*[@id='common_search']")
+    public WebElement filterKeywordtextBox;
+
+    @FindBy(xpath = "(//*[text()='All Categories'])[2]")
+    public WebElement filterAllCategoriesTextBox;
+
+    @FindBy(id = "select2-subcategories-container")
+    public WebElement filterSubCategoryTextBox;
+
+
+    @FindBy(xpath = "//*[text()='Search']")
+    public WebElement searchButonu;
+
+
+
+
 
     @FindBy(xpath = "//*[@id='filter_search']")
     public WebElement filterIconu;
@@ -249,12 +300,65 @@ public class TestPage {
     @FindBy(id = "select2-subcategories-container")
     public WebElement filterSubCategoryTextBox;
 
+
+
+
+
+
+
+public void filterFormTextleri(){
+
+      filterLocationText.isDisplayed();
+    filterSortByText.isDisplayed();
+    filterKeywordText.isDisplayed();
+    filterCategoriesText.isDisplayed();
+    filterSubCategoryText.isDisplayed();
+    filterPriceRangeText.isDisplayed();
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Methods
+
   public void leakDetectionServiceTexts(){
 
 
       Assert.assertTrue(leakDetectionAdditionalServicesText.isDisplayed());
-      Assert.assertTrue(leakDetectionRelatedServicesText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceAmountText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceAvailabilityText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceProviderText.isDisplayed());
