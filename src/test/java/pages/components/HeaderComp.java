@@ -64,6 +64,9 @@ public class HeaderComp {
     @FindBy(xpath = "//*[text()='Shops & Services']")
     public WebElement shopsMenuShopsService;      //Shops menudeki Shops % Service
 
+    @FindBy(id ="Profile Settings")
+    public WebElement profilSettings;  // profil ikonu menüdeki profil Setting menüsü
+
 
 
 
