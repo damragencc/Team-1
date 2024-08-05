@@ -14,7 +14,7 @@ Feature: US014 Bir kullanici olarak Ev Hizmetler'ine ait şirketleri ve hizmetle
          When "Categories" bolumune tıklar
          Then Acılan dropdown menude "Home Services" bolumunu goruntuler
          When "Home Services" bolumune tiklar
-         And sayfayi kapatir
+         And Sayfayi kapatir
 
 
 
@@ -50,7 +50,8 @@ Feature: US014 Bir kullanici olarak Ev Hizmetler'ine ait şirketleri ve hizmetle
           When "Shops" butonuna tıklar
           Then Acilan sayfa’a bulunan search formundaki alanlar("Location","Sort By","Keyword","Categories","Sub Category","Price Range") ve "Search" butonu görüntüler
           Then "Search" butonunun aktif olugunu dogrular
-          When "Form"'da istenilen bilgileri girer
+          When "Form"'da "Location","Sort By","Keyword","Categories","Sub Category","Price Range" bilgilerini girer
+          And sayfayi kapatir
 
 
     #When Search butonuna tıklar
