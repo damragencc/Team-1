@@ -48,8 +48,7 @@ public class US044_LogoutTestStepDefinitions {
         headerComp.passwordEnterButton.click();
     }
     @When("Kullaci bilgilerini girer.")
-    public void kullaci_bilgilerini_girer() {
-        headerComp.performLogIn("toprakyemelek.user@ommarket.com","Ommarket.2607");}
+    public void kullaci_bilgilerini_girer() {headerComp.performLogIn("toprakyemelek.user@ommarket.com","Ommarket.2607");}
     @Then("Header bolumundeki profil ikonunun goruntulendigi dogrulanir.")
     public void header_bolumundeki_profil_ikonunun_goruntulendigi_dogrulanir() {
         headerComp.profilIkonu.isDisplayed();
