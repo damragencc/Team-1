@@ -10,9 +10,9 @@ import utilities.ReusableMethods;
 
 public class HeaderComp {
 
-    public HeaderComp() {
+    public HeaderComp(){
 
-        PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(Driver.getDriver(),this);
 
 
     }
@@ -38,10 +38,10 @@ public class HeaderComp {
     @FindBy(xpath = "//span[@class='user-img']")
     public WebElement profilIkonu;
 
-    @FindBy(xpath = "//*[@class='user-img']")
+    @FindBy (xpath = "//*[@class='user-img']")
     public WebElement insanIconu; // Anasayfa sağ üst köşedeki kullanıcı girişi insan ikonu
 
-    @FindBy(xpath = "(//*[@class='dropdown-item'])[1]")
+    @FindBy (xpath = "(//*[@class='dropdown-item'])[1]")
     public WebElement dropDownDashboard;
 
     @FindBy(xpath = "//a[text()='Contact US']")
@@ -68,17 +68,20 @@ public class HeaderComp {
 
 
 
-    public void performLogIn(String mail, String password) {
-        headerLoginButton.click();
-        emailIdBox.sendKeys(mail);
-        ReusableMethods.wait(1);
-        emailIdBox.sendKeys(" ", Keys.ENTER);
-        ReusableMethods.wait(1);
-        emailLoginButton.click();
-        passwordBox.sendKeys(password);
-        passwordEnterButton.click();
-    }
+
+public void performLogIn(String mail, String password) {
+    headerLoginButton.click();
+    emailIdBox.sendKeys(mail);
+    ReusableMethods.wait(1);
+    emailIdBox.sendKeys(" ", Keys.ENTER);
+    ReusableMethods.wait(1);
+    emailLoginButton.click();
+    passwordBox.sendKeys(password);
+    passwordEnterButton.click();
 }
+
+}
+
 
 
 

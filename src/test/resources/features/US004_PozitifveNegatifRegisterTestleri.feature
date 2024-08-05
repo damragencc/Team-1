@@ -20,7 +20,7 @@ Feature:US05 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin
     Then "Name" "Email" "Password" "MobileNumber" texti dogrulanir
     And sayfayi kapatir
 
-
+@Damra
   Scenario Outline: TC03 Kullanici formu doldurur ve register butonuna basıp basarılı bir sekilde anasayfaya gecis yapabilmeli.
 
     When "<Name>" "<Mail>" "<Password>" bilgilerini girer

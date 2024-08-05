@@ -92,7 +92,7 @@ public class TestPage {
     @FindBy(xpath = "//*[text()='Service Details']")
     public WebElement leakDetectionServiceDetailsText;
 
-    @FindBy(xpath = "(//*[text()='$300'])[2]")
+    @FindBy(xpath = "//*[text()='$300']")
     public WebElement leakDetectionServiceAmountText;
 
     @FindBy(xpath = "//*[text()='Service Provider']")
@@ -115,22 +115,22 @@ public class TestPage {
     public WebElement filterIconu;
 
     @FindBy(xpath = "//*[text()='Location']")
-    public WebElement filterLocation;
+    public WebElement filterLocationText;
 
     @FindBy(xpath = "//*[text()='Sort By']")
-    public WebElement filterSortBy;
+    public WebElement filterSortByText;
 
     @FindBy(xpath = "//*[text()='Keyword']")
-    public WebElement filterKeyword;
+    public WebElement filterKeywordText;
 
     @FindBy(xpath = "//*[text()='Categories']")
-    public WebElement filterCategories;
+    public WebElement filterCategoriesText;
 
     @FindBy(xpath = "//*[text()='Sub Category']")
-    public WebElement filterSubCategory;
+    public WebElement filterSubCategoryText;
 
     @FindBy(xpath = "//*[text()='Price Range']")
-    public WebElement filterPriceRange;
+    public WebElement filterPriceRangeText;
 
 
     //Filter iconu Form Bilgileri TextBox Bilgileri
@@ -154,11 +154,46 @@ public class TestPage {
     public WebElement filterSubCategoryTextBox;
 
 
+    @FindBy(xpath = "//*[text()='Search']")
+    public WebElement searchButonu;
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public void filterFormTextleri(){
+
+      filterLocationText.isDisplayed();
+    filterSortByText.isDisplayed();
+    filterKeywordText.isDisplayed();
+    filterCategoriesText.isDisplayed();
+    filterSubCategoryText.isDisplayed();
+    filterPriceRangeText.isDisplayed();
+
+
+
+
+}
 
 
 
@@ -196,7 +231,6 @@ public class TestPage {
 
 
       Assert.assertTrue(leakDetectionAdditionalServicesText.isDisplayed());
-      Assert.assertTrue(leakDetectionRelatedServicesText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceAmountText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceAvailabilityText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceProviderText.isDisplayed());

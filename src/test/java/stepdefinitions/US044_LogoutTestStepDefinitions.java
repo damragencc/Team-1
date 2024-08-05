@@ -28,25 +28,9 @@ public class US044_LogoutTestStepDefinitions {
     public void anasayfayi_goruntulendigini_dogrular() {
         registerPage.anaSayfaGoruntuleme.isDisplayed();
     }
-    @When("Login butonuna tiklar.")
-    public void login_butonuna_tiklar() {
-        headerComp.headerLoginButton.click();
-    }
-
-    @When("Email ID bolumune {string} bilgileri giris yapar")
-    public void email_ıd_bolumune_bilgileri_giris_yapar() {
-    headerComp.emailIdBox.sendKeys(ConfigReader.getProperty("userMail1"));
-    }
-    
-
-    @When("Password bolumune {string} bilgileri giris yapar.")
-    public void password_bolumune_bilgileri_giris_yapar(String password) {
-       headerComp.passwordBox.sendKeys(ConfigReader.getProperty(password));
-    }
-    @Then("Enter butonuna tiklar.")
-    public void enter_butonuna_tiklar() {
-        headerComp.passwordEnterButton.click();
-    }
+    @When("Kullaci bilgilerini girer.")
+    public void kullaci_bilgilerini_girer() {
+        headerComp.performLogIn("toprakyemelek.user@ommarket.com","Ommarket.2607");}
     @Then("Header bolumundeki profil ikonunun goruntulendigi dogrulanir.")
     public void header_bolumundeki_profil_ikonunun_goruntulendigi_dogrulanir() {
         headerComp.profilIkonu.isDisplayed();

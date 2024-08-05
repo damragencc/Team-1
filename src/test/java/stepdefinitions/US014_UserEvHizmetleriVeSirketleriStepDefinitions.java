@@ -1,6 +1,8 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
@@ -130,6 +132,38 @@ public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
     public void acilan_dropdown_menude_shops_services_tiklar(String shopsService) throws InterruptedException {
         headerComp.shopsMenuShopsService.click();
         registerPage.beklemeSuresi();
+    }
+
+    @Then("{string} iconunu goruntuler ve aktif oldugunu dogrular")
+    public void filter_iconunu_goruntuler_ve_aktif_oldugunu_dogrular(String filter) {
+
+        Assert.assertTrue(testPage.filterIconu.isDisplayed());
+        Assert.assertTrue(testPage.filterIconu.isEnabled());
+    }
+    @When("{string} iconuna tıklar")
+    public void filter_iconuna_tıklar(String filter) {
+
+        testPage.filterIconu.click();
+    }
+    @When("Shops butonuna tıklar")
+    public void shops_butonuna_tıklar() {
+        testPage.shopsButonu.click();
+
+    }
+    @Then("Acilan sayfa’a bulunan search formundaki alanlar\\({string},{string},{string},{string},{string},{string}) ve {string} butonu görüntüler")
+    public void acilan_sayfa_a_bulunan_search_formundaki_alanlar_location_sort_by_keyword_categories_sub_category_price_range_ve_search_butonu_görüntüler(String location,String sortBy,String keyword,String categories,String subCategories,String priceRange,String search) {
+            testPage.filterFormTextleri();
+    }
+    @Then("{string} butonunun aktif olugunu dogrular")
+    public void search_butonunun_aktif_olugunu_dogrular(String search) {
+
+        Assert.assertTrue(testPage.searchButonu.isEnabled());
+
+    }
+    @When("{string}'da istenilen bilgileri girer")
+    public void form_da_istenilen_bilgileri_girer(String form) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
 
 
