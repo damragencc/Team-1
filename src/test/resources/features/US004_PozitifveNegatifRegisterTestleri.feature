@@ -1,9 +1,10 @@
 
-Feature:US01 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin siteye user olarak kayit olabilmek istiyorum
+Feature:US05 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin siteye user olarak kayit olabilmek istiyorum
 
   Background:Kullanicin Become a User adresine gitmelerin icin gereken adımlar
     Given Kullanici "masterUrl" gider
     When Become a User butonuna tiklar
+
 
 
 
@@ -23,7 +24,7 @@ Feature:US01 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin
   Scenario Outline: TC03 Kullanici formu doldurur ve register butonuna basıp basarılı bir sekilde anasayfaya gecis yapabilmeli.
 
     When "<Name>" "<Mail>" "<Password>" bilgilerini girer
-    And 1 saniye bekle
+    And 2 saniye bekle
     Then Checkboxa tıklar
     And  3 saniye bekle
     When "<ulke>" ve "<MobileNumber>" bilgilerini girer
@@ -43,23 +44,109 @@ Feature:US01 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin
 
 
 
+
+
   Scenario Outline: TC04 gecersiz name ile kayıt olamamali
 
     Given "<Name>" girer
-    And 2 saniye bekle
-    When "userMail" "userPassword" bilgilerini girer
+    And 1 saniye bekle
+    When "gecerliEmail" bilgisini girer
+    When  "gecerliPassword" girer.
     Then checkboxa tıklar
     And 3 saniye bekle
     When  "userUlke" secer ve "userMobileNumber" girer
     And 2 saniye bekle
-    Then cinsiyet olarak erkek butouna ve onay butunona tıklar
-    When register butonuna tıklar
-    #Then kayit olamadigini test eder
+    Then cinsiyet olarak erkek butonuna ve onay butonuna tıklar
+    Then kayit olamadigini test eder
     And  sayfayi kapatir
 
     Examples:
       |Name|
-      |gecersizName|
+      |       |
+
+
+    Scenario Outline: TC05 gecersiz mail ile register olmamali
+      When "gecerliName" verisini girer
+      When "<gecersizEmail>" adresi girer
+      When  "gecerliPassword" girer.
+      When checkboxa tıklar
+      When "userUlke" ve "userMobileNumber" verilerini girer
+      Then cinsiyet olarak erkek butonuna ve onay butonuna tıklar
+      And 2 saniye bekle
+      Then kayit olamadigini test eder
+      And sayfayi kapatir
+
+      Examples:
+        |gecersizEmail|
+        |damragenc@gmailcom|
+        |damragencgmailcom|
+        |damragenc@namecom|
+        |damragenc@gmail.|
+
+
+
+    Scenario Outline: TC06 gecersiz password ile register olmamali
+
+    When "gecerliName" verisini girer
+    When "gecerliEmail" bilgisini girer
+    When  "<gecersizPassword>" girmeli
+    When checkboxa tıklar
+    When "userUlke" ve "userMobileNumber" verilerini girer
+    Then cinsiyet olarak erkek butonuna ve onay butonuna tıklar
+    And 2 saniye bekle
+      Then kayit olamadigini test eder
+    And sayfayi kapatir
+
+    Examples:
+      |gecersizPassword|
+      |                     |
+
+
+
+
+
+      Scenario Outline: TC07 gecersiz phoneNumber ile register olmamali
+
+        When "gecerliName" verisini girer
+        When "gecerliEmail" bilgisini girer
+        When  "gecerliPassword" girer.
+        And 2 saniye bekle
+        When  "userUlke" secer
+        When "<gecersizPhoneNumber>" bilgisini yanlıs girer
+        Then cinsiyet olarak erkek butonuna ve onay butonuna tıklar
+        And 2 saniye bekle
+        Then kayit olamadigini test eder
+        And sayfayi kapatir
+
+
+
+        Examples:
+          |gecersizPhoneNumber|
+          |!+'!+!'+!'+!|
+          |1231312312412412412|
+          |                    |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

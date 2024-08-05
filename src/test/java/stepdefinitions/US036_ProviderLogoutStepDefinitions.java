@@ -1,9 +1,11 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import pages.components.HeaderComp;
 import pages.components.LoginLogoutPage;
+
 import utilities.ConfigReader;
 import utilities.ReusableMethods;
 
@@ -11,15 +13,20 @@ public class US036_ProviderLogoutStepDefinitions {
     HeaderComp headerComp = new HeaderComp();
     LoginLogoutPage loginLogoutPage=new LoginLogoutPage();
 
+
     @Given("Login butonuna tiklar")
     public void login_butonuna_tiklar() {
-        headerComp.mainPageLoginButton.click();
+
         ReusableMethods.bekle(2);
     }
 
     @Given("Gecerli  {string} adresini girer")
     public void gecerli_adresini_girer(String providerEmail) {
+
+
        loginLogoutPage.mainPageLoginFormEmailbox.sendKeys(ConfigReader.getProperty("providerEmail"));
+
+        
     }
     @Given("Gecerli {string} girer")
     public void gecerli_girer(String string) {

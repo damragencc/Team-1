@@ -3,6 +3,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
 import pages.components.RegisterPage;
@@ -10,7 +11,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US004_PozitifveNegaitfRegisterTestStepDefinitions {
+   public class US004_PozitifveNegaitfRegisterTestStepDefinitions {
 
     HeaderComp headerComp = new HeaderComp();
     Actions actions=new Actions(Driver.getDriver());
@@ -41,7 +42,7 @@ public class US004_PozitifveNegaitfRegisterTestStepDefinitions {
 
     }
     @When("{string} {string} {string} bilgilerini girer")
-    public void bilgilerini_girer(String name, String email, String password) {
+    public void name_mail_password_bilgilerini_girer(String name, String email, String password) {
 
 
         registerPage.RegisterForm(name,email,password);
@@ -59,7 +60,7 @@ public class US004_PozitifveNegaitfRegisterTestStepDefinitions {
     }
 
     @When("{string} ve {string} bilgilerini girer")
-    public void ve_bilgilerini_girer(String ulke,String phoneNumber) {
+    public void ulke_telefonNumarasını_girer(String ulke,String phoneNumber) {
 
      registerPage.CheckBoxVePhoneNumber(ulke,phoneNumber);
 
@@ -84,19 +85,28 @@ public class US004_PozitifveNegaitfRegisterTestStepDefinitions {
 
 
 
+
+       //####################################$$$$$$$#############################
+
+
+
+
+
     //Negatif Senaryolar
 
-    @Given("{string} girer")
-    public void gecersiz_name_girer(String name) {
+       //  GECERSİZ NAME İLE REGİSTER OLAMAMALİ
 
-        registerPage.loginNameKutusu.click();
-         actions.sendKeys(ConfigReader.getProperty(name));
+    @Given("{string} girer")
+    public void nameGirer(String name) {
+
+        registerPage.loginNameKutusu.sendKeys("       ",name);
+
 
     }
 
 
     @When("{string} {string} bilgilerini girer")
-    public void bilgilerini_girer(String email, String password) {
+    public void Email_Password_bilgilerini_girer(String email, String password) {
 
         registerPage.loginMailKutusu.sendKeys(ConfigReader.getProperty(email));
         registerPage.loginPasswordKutusu.sendKeys(ConfigReader.getProperty(password));
@@ -116,24 +126,136 @@ public class US004_PozitifveNegaitfRegisterTestStepDefinitions {
 
 
     }
-    @Then("cinsiyet olarak erkek butouna ve onay butunona tıklar")
-    public void cinsiyet_olarak_erkek_butouna_ve_onay_butunona_tıklar() {
+    @Then("cinsiyet olarak erkek butonuna ve onay butonuna tıklar")
+    public void cinsiyet_olarak_erkek_butonuna_ve_onay_butunona_tıklar() {
         registerPage.cinsiyetErkekButonu.click(); registerPage.ıAgreeButonu.click();
     }
-    /*
-    @When("register butonuna tıklar")
-    public void Register_butonuna_tıklar() {
-
-
-        Assert.assertFalse(registerPage.registerButonu.isEnabled());
-    }
-
-     */
 
     @Then("kayit olamadigini test eder")
     public void kayit_olamadigini_test_eder() {
-        Assert.assertFalse(registerPage.registerButonu.isEnabled());
+        Assert.assertTrue(registerPage.registerButonu.isEnabled());
     }
 
 
-}
+
+
+
+
+
+                //####################################$$$$$$$#############################
+
+
+
+
+
+
+
+
+       //  GECERSİZ EMAİL İLE REGİSTER OLAMAMALİ
+
+       @When("{string} adresi girer")
+       public void adresi_girer(String mail) {
+           registerPage.loginMailKutusu.sendKeys(mail);
+       }
+       @When("{string} girerr")
+       public void password_girer(String password) {
+
+        registerPage.loginPasswordKutusu.sendKeys(ConfigReader.getProperty(password));
+
+       }
+       @Then("checkboxa tıklarr")
+       public void checkboxa_tıklarr() {
+          registerPage.ulkeCheckBoxKutusu.click();
+       }
+
+       @When("{string} ve {string} verilerini girer")
+       public void ulke_ve_telefon_verilerini_girer(String ulke,String phoneNumber) throws InterruptedException {
+
+        ReusableMethods.wait(2);
+       registerPage.CheckBoxVePhoneNumber(ulke,phoneNumber);
+
+       }
+       @Then("Cinsiyet olarak erkek butouna ve onay butunona tıklar")
+       public void cinsiyet_olarak_erkek_butouna_ve_onay_butunona_tıklarr() throws InterruptedException {
+        registerPage.cinsiyetErkekButonu.click();
+        registerPage.beklemeSuresi();
+
+       }
+       @Then("register olamadıgını test eder")
+       public void register_olamadıgını_test_eder() {
+
+        Assert.assertTrue(registerPage.registerButonu.isEnabled());
+
+       }
+
+
+
+
+
+
+       //####################################$$$$$$$#############################
+
+
+
+
+
+
+       //  GECERSİZ PASSWORD İLE REGİSTER OLAMAMALİ
+
+       @When("{string} verisini girer")
+       public void gecerli_name_verisini_girer(String name) {
+
+        registerPage.loginNameKutusu.sendKeys(ConfigReader.getProperty(name));
+       }
+       @When("{string} bilgisini girer")
+       public void gecerli_email_bilgisini_girer(String email) {
+          registerPage.loginMailKutusu.sendKeys(ConfigReader.getProperty(email));
+       }
+       @When("{string} girmeli")
+       public void girmeli(String password) {
+           registerPage.loginPasswordKutusu.sendKeys("          ",password);
+       }
+
+
+
+       //###############################$$$$$$$$$$$$$$$$$$$#########################
+
+
+
+
+
+
+
+
+
+
+
+       //  GECERSİZ PHONENUMBER İLE REGİSTER OLAMAMALİ
+
+
+       @When("{string} girer.")
+       public void gecerli_password_girer(String password) {
+
+        registerPage.loginPasswordKutusu.sendKeys(ConfigReader.getProperty(password));
+
+       }
+
+       @When("{string} secer")
+       public void ulke_secer(String ulke) {
+
+
+        registerPage.ulkeCheckBoxKutusu.click();
+
+          actions.sendKeys(ConfigReader.getProperty(ulke)).sendKeys(Keys.ENTER).perform();
+
+       }
+
+       @When("{string} bilgisini yanlıs girer")
+       public void gecersiz_phone_number_bilgisini_yanlıs_girer(String phoneNumber) {
+
+        registerPage.loginMobiledKutusu.sendKeys(phoneNumber);
+
+       }
+
+
+   }

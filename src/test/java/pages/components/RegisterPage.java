@@ -19,6 +19,8 @@ public class RegisterPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+
     Actions actions=new Actions(Driver.getDriver());
 
     @FindBy(xpath = "//*[text()='Find Reliable']")
@@ -63,6 +65,23 @@ public class RegisterPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void RegisterForm(String name,String email,String password){
 
         loginNameKutusu.click();
@@ -71,7 +90,9 @@ public class RegisterPage {
                 .sendKeys(ConfigReader.getProperty(email)).sendKeys(Keys.TAB)
                 .sendKeys(ConfigReader.getProperty(password)).perform();
 
+
     }
+
     public void CheckBoxVePhoneNumber(String ulke,String phoneNumber){
 
         actions.sendKeys(ulkeCheckBoxKutusu).click().sendKeys(ConfigReader.
@@ -79,13 +100,25 @@ public class RegisterPage {
                 .getProperty(phoneNumber)).perform();
 
 
+
     }
     public void selectOptionByValue(String value) {
         WebElement selectElement = driver.findElement(By.id("country"));
         Select select = new Select(selectElement);
         select.selectByValue(value);
+
+    }
+
+
+    public void beklemeSuresi() throws InterruptedException {
+
+        Thread.sleep(2000);
+
     }
 
 
 
-}
+    }
+
+
+
