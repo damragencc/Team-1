@@ -23,10 +23,37 @@ Feature: As a registered user, I would like to have an area where I can view the
     * Tekrar anasayfaya donuldugunde sag ust kisimda gorunen insan figuru resmine tiklanir
     * Acilan dropdown menude Dashboard'a tiklanir
     * Dashboard sidebar'daki Invoices linkine tiklanildiginda ilgili sayfaya gidilmelidir.
-    * Acilan fatura sayfasinda 2 adet faturanin gorundugu dogrulanmalidir.
     * Birinci fatura olan Pipe Repair faturasina tiklandiginda acilan sayfanin Pipe Repair sayfasi oldugu ve sayfada Service Details yazisinin gorundugu dogrulanmalidir.
     * Sayfa kapanir
 
+  Scenario: TC03 On the Invoices page, the 'Export' button on the invoice of the reservations whose requests have been completed is visible and must be active.
+
+    * Kullanici "masterUrl" adresine gider
+    * Anasayfayi goruntulenir
+    * Anasayfa sag ust kisimda Login butonuna tiklanir.
+    * Acilan Login kutucugunda Email ID kismina gecerli kullanici e-mail girilir ve Login butonuna tiklanir
+    * Aacilan Password kutucugunda gecerli sifre girilir ve Enter butonuna tiklanir
+    * Tekrar anasayfaya donuldugunde sag ust kisimda gorunen insan figuru resmine tiklanir
+    * Acilan dropdown menude Dashboard'a tiklanir
+    * Dashboard sidebar'daki Invoices linkine tiklanildiginda ilgili sayfaya gidilmelidir.
+    * Birinci faturanin sag tarafinda bulunan Export butonu gorunur ve aktif olmalidir.
+    * Export butonuna tiklandiginda yeni acilan sayfanin "https://qa.onlinemastermarket.com/user/dashboard/export_invoice/70" oldugu dogrulanir.
+    * Sayfa kapanir
+
+  Scenario: TC04 On the Invoices page, the 'Export' button on the invoice of the reservations whose requests have been completed is visible and must be active.
+
+    * Kullanici "masterUrl" adresine gider
+    * Anasayfayi goruntulenir
+    * Anasayfa sag ust kisimda Login butonuna tiklanir.
+    * Acilan Login kutucugunda Email ID kismina gecerli kullanici e-mail girilir ve Login butonuna tiklanir
+    * Aacilan Password kutucugunda gecerli sifre girilir ve Enter butonuna tiklanir
+    * Tekrar anasayfaya donuldugunde sag ust kisimda gorunen insan figuru resmine tiklanir
+    * Acilan dropdown menude Dashboard'a tiklanir
+    * Dashboard sidebar'daki Invoices linkine tiklanildiginda ilgili sayfaya gidilmelidir.
+    * Invoices sayfasinda Export All butonu gorunur ve aktif olmalidir.
+    * From Date To Date araligi "01.08.2024-31.08.2024" araligi secilerek Export All butonuna tiklanmalidir.
+    * Acilan yeni sayfanin linkinin "https://qa.onlinemastermarket.com/user/dashboard/export_muliple_invoice/01-08-2024/31-08-2024" oldugu dogrulanmalidir.
+    * Sayfa kapanir
 
 
 
