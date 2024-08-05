@@ -1,12 +1,11 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
+import org.junit.Assert;
 import pages.components.HeaderComp;
 import pages.components.LoginLogoutPage;
-
 import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US036_ProviderLogoutStepDefinitions {
@@ -14,37 +13,13 @@ public class US036_ProviderLogoutStepDefinitions {
     LoginLogoutPage loginLogoutPage=new LoginLogoutPage();
 
 
-    @Given("Login butonuna tiklar")
-    public void login_butonuna_tiklar() {
 
-        ReusableMethods.bekle(2);
+
+    @Given("{string} ve {string} ile giris yapar")
+    public void ve_ile_giris_yapar(String providerEmail, String providerPassword) {
+        headerComp.performLogIn(ConfigReader.getProperty("providerEmail"),ConfigReader.getProperty("providerPassword"));
     }
 
-    @Given("Gecerli  {string} adresini girer")
-    public void gecerli_adresini_girer(String providerEmail) {
-
-
-       loginLogoutPage.mainPageLoginFormEmailbox.sendKeys(ConfigReader.getProperty("providerEmail"));
-
-        
-    }
-    @Given("Gecerli {string} girer")
-    public void gecerli_girer(String string) {
-        loginLogoutPage.mainPageLoginFormPasswordbox.sendKeys(ConfigReader.getProperty("providerPassword"));
-    }
-
-    @Given("Loginform butonuna tiklar")
-    public void loginform_butonuna_tiklar() {
-
-        loginLogoutPage.mainPageLoginFormEmailboxLoginButton.click();
-    }
-
-
-    @Given("Enter butonuna tiklar")
-    public void enter_butonuna_tiklar() {
-
-        loginLogoutPage.mainPageLoginFormPasswordEnterButton.click();
-    }
 
     @Given("Header bolumundeki profil simgesine tiklar")
     public void header_bolumundeki_profil_simgesine_tiklar() {
@@ -53,9 +28,21 @@ public class US036_ProviderLogoutStepDefinitions {
     }
     @Given("Logout linkinin gorunur ve tiklanabilir oldugunu dogrular")
     public void logout_linkinin_gorunur_ve_tiklanabilir_oldugunu_dogrular() {
-        Select select=new Select(loginLogoutPage.profileDropDown);
-        select.selectByVisibleText("Logout");
+        Assert.assertTrue(loginLogoutPage.logoutDropDown.isDisplayed());
 
     }
-
+    @Given("Logout linkine tiklar")
+    public void logout_linkine_tiklar() {
+        loginLogoutPage.logoutDropDown.click();
+    }
+    @Given("Basari ile cikis yapildigini dogrular")
+    public void basari_ile_cikis_yapildigini_dogrular() {
+        Assert.assertTrue(headerComp.mainPageLoginButton.isEnabled());
+    }
+    @Given("Geri tuşu ile onceki sayfaya giderek logout durumunda olundugunu dogrular")
+    public void geri_tuşu_ile_onceki_sayfaya_giderek_logout_durumunda_olundugunu_dogrular() {
+        Driver.getDriver().navigate().back();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(headerComp.mainPageLoginButton.isDisplayed());
+    }
 }

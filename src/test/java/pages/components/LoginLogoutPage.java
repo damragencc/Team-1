@@ -29,6 +29,9 @@ public class LoginLogoutPage {
     @FindBy(xpath = "//span[@class='user-img']")
     public WebElement profileIcon;
 
-    @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu-end show']")
+    @FindBy(css = ".dropdown-menu.dropdown-menu-end.show > a:nth-of-type(10)")
     public WebElement profileDropDown;
+
+    @FindBy(xpath = "//*[text()='Logout']")
+    public WebElement logoutDropDown;
 }
