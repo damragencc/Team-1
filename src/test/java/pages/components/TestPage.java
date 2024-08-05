@@ -1,5 +1,6 @@
 
 package pages.components;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -109,43 +110,56 @@ public class TestPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   public void leakDetectionServiceTexts(){
 
 
-      leakDetectionAdditionalServicesText.isDisplayed();
-      leakDetectionRelatedServicesText.isDisplayed();
-      leakDetectionServiceAmountText.isDisplayed();
-      leakDetectionServiceAvailabilityText.isDisplayed();
-      leakDetectionServiceProviderText.isDisplayed();
-      leakDetectionServiceDetailsText.isDisplayed();
+      Assert.assertTrue(leakDetectionAdditionalServicesText.isDisplayed());
+      Assert.assertTrue(leakDetectionRelatedServicesText.isDisplayed());
+      Assert.assertTrue(leakDetectionServiceAmountText.isDisplayed());
+      Assert.assertTrue(leakDetectionServiceAvailabilityText.isDisplayed());
+      Assert.assertTrue(leakDetectionServiceProviderText.isDisplayed());
+      Assert.assertTrue(leakDetectionServiceDetailsText.isDisplayed());
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -153,21 +167,21 @@ public class TestPage {
 
   public void aquaShieldPlumbingServiceAmountsveLocations(){
 
-      leakDetectionAmount.isDisplayed();
-      pipeRepairAmount.isDisplayed();
-      drainCleaningAmount.isDisplayed();
+      Assert.assertTrue(leakDetectionAmount.isDisplayed());
+      Assert.assertTrue(pipeRepairAmount.isDisplayed());
+      Assert.assertTrue(drainCleaningAmount.isDisplayed());
 
-      leakDetectionLocation.isDisplayed();
-      pipeRepairLocation.isDisplayed();
-      drainCleaningLocation.isDisplayed();
+      Assert.assertTrue(leakDetectionLocation.isDisplayed());
+      Assert.assertTrue(pipeRepairLocation.isDisplayed());
+      Assert.assertTrue(drainCleaningLocation.isDisplayed());
 
   }
 
   public void aquaShieldPlumbingServiceCesitleri(){
 
-      serviceLeakDetection.isDisplayed();
-      servicePipeRepair.isDisplayed();
-      serviceDrainCleaning.isDisplayed();
+      Assert.assertTrue(serviceLeakDetection.isDisplayed());
+      Assert.assertTrue(servicePipeRepair.isDisplayed());
+      Assert.assertTrue(serviceDrainCleaning.isDisplayed());
   }
 
 
@@ -175,36 +189,36 @@ public class TestPage {
 
     public void homeServiceShops(){
 
-        shopsAquaShieldPlumbing.isDisplayed();
-        shopVoltMasterSolutions.isDisplayed();
-        shopsSunPainting.isDisplayed();
-        shopsSereneHomeCleaning.isDisplayed();
+        Assert.assertTrue(shopsAquaShieldPlumbing.isDisplayed());
+        Assert.assertTrue(shopVoltMasterSolutions.isDisplayed());
+        Assert.assertTrue(shopsSunPainting.isDisplayed());
+        Assert.assertTrue(shopsSereneHomeCleaning.isDisplayed());
     }
 
     public void shopsVisitStoreButonları(){
 
 
-       aquShieldVisitButonu.isEnabled();
-        sereneHomeVisitButonu.isEnabled();
-        sunPaintingVisitButonu.isEnabled();
-        volMasterdVisitButonu.isEnabled();
+        Assert.assertTrue(aquShieldVisitButonu.isEnabled());
+        Assert.assertTrue(sereneHomeVisitButonu.isEnabled());
+        Assert.assertTrue(sunPaintingVisitButonu.isEnabled());
+        Assert.assertTrue(volMasterdVisitButonu.isEnabled());
     }
 
 
     public void aquaShieldPlumbingTextleri(){
 
-        shopDetailsText.isDisplayed();
-         shopAvailabilityText.isDisplayed();
-         servicesText.isDisplayed();
+        Assert.assertTrue(shopDetailsText.isDisplayed());
+        Assert.assertTrue(shopAvailabilityText.isDisplayed());
+        Assert.assertTrue(servicesText.isDisplayed());
     }
 
 
     public void aquaShieldPlumbingServisLocations(){
 
 
-      leakDetectionLocation.isDisplayed();
-      pipeRepairLocation.isDisplayed();
-      drainCleaningLocation.isDisplayed();
+        Assert.assertTrue(leakDetectionLocation.isDisplayed());
+        Assert.assertTrue(pipeRepairLocation.isDisplayed());
+        Assert.assertTrue(drainCleaningLocation.isDisplayed());
     }
 
 

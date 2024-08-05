@@ -1,13 +1,14 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
 import pages.components.RegisterPage;
 import pages.components.TestPage;
 import utilities.Driver;
 
-public class US014_UserEvHizmetleriVeSirketleriStepDefinitions {
+public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
 
     Actions actions=new Actions(Driver.getDriver());
     HeaderComp headerComp=new HeaderComp();
@@ -47,7 +48,8 @@ public class US014_UserEvHizmetleriVeSirketleriStepDefinitions {
     @Given("{string} butonları goruntulenir ve aktif oldugunu dogrular")
     public void shops_ve_service_butonları_goruntulenir_ve_aktif_oldugunu_dogrular(String shopsVeService) {
 
-          testPage.shopsButonu.isDisplayed(); testPage.shopsButonu.isEnabled();
+          Assert.assertTrue(testPage.shopsButonu.isDisplayed());
+          Assert.assertTrue(testPage.shopsButonu.isEnabled());
 
     }
     @Given("{string} butonuna tıklar")
@@ -84,7 +86,7 @@ public class US014_UserEvHizmetleriVeSirketleriStepDefinitions {
 
     @Given("Sag ust kosede bulunan {string} butonuna tiklar")
     public void sag_ust_kosede_bulunan_services_butonuna_tiklar(String threeService) {
-              testPage.threeServicesButonu.isEnabled();
+             Assert.assertTrue(testPage.threeServicesButonu.isEnabled());
               testPage.threeServicesButonu.click();
     }
 
