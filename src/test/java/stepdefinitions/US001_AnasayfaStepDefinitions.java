@@ -8,6 +8,7 @@ import pages.components.HeaderComp;
 import pages.components.RegisterPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class US001_AnasayfaStepDefinitions {
 
@@ -18,6 +19,8 @@ public class US001_AnasayfaStepDefinitions {
     @Given("Kullanici {string} gider")
     public void kullanici_gider(String istenenUrlAdi) {
         Driver.getDriver().get(ConfigReader.getProperty(istenenUrlAdi));
+
+        ReusableMethods.bekle(3);
 
     }
     @Then("Anasayfayi goruntuler")

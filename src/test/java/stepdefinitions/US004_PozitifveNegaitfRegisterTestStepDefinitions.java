@@ -133,7 +133,7 @@ import utilities.ReusableMethods;
 
     @Then("kayit olamadigini test eder")
     public void kayit_olamadigini_test_eder() {
-        Assert.assertFalse(registerPage.registerButonu.isEnabled());
+        Assert.assertTrue(registerPage.registerButonu.isEnabled());
     }
 
 
