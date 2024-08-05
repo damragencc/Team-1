@@ -49,3 +49,33 @@ Feature: As a user, I would like to have a page where I can follow the companies
   Scenario: TC11 Address and fee information should be displayed when any of the service cards is clicked
 
     Then User address and fee information should be displayed when any of the service cards is clicked
+
+  Scenario: TC12 Closes the page
+
+  Scenario: TC13 User goes to OnlineMasterMarketUrl
+
+    Given User goes to "masterUrl"
+  
+  Scenario: TC14 Clicks on the "Categories" tab in the Header section
+
+    Then User clicks on the "Categories" tab in the header section
+
+  Scenario: TC15 Clicks on the "Events" element
+
+    Then User click on the "Events" element
+
+  Scenario: TC16 The filter icon on the page containing the "Shops" and "Service" elements must be visible
+
+    Then User filter icon on the page containing the "Shops" and "Service" elements must be visible
+
+  Scenario: TC17 "Location", "Sort By", "Keyword", "Categories" and "Sub Category" elements should be visible on the form screen that opens when you click on the filter icon
+
+    Then User "Location", "Sort By", "Keyword", "Categories" and "Sub Category" elements should be visible on the form screen that opens when you click on the filter icon
+
+  Scenario: TC18 There should be a "Search" button on the filter screen
+
+    Then User there should be a "Search" button on the filter screen
+
+  Scenario: TC19 Searches can be made by sending values to the filtering screen that opens
+
+    Then User searches can be made by sending values to the filtering screen that opens
