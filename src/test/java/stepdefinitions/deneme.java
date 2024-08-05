@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
-import pages.components.LoginPage;
+import pages.components.RegisterPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -16,7 +16,7 @@ public class deneme {
 
         HeaderComp headerComp = new HeaderComp();
 
-        LoginPage loginPage = new LoginPage();
+        RegisterPage registerPage=new RegisterPage();
 
         Actions actions = new Actions(Driver.getDriver());
 
@@ -26,7 +26,7 @@ public class deneme {
         }
         @When("Anasayfayi goruntulendigini dogrular")
         public void anasayfayi_goruntulendigini_dogrular() {
-            loginPage.anaSayfaGoruntuleme.isDisplayed();
+            registerPage.anaSayfaGoruntuleme.isDisplayed();
         }
         @When("Login butonuna tiklar")
         public void login_butonuna_tiklar() {
