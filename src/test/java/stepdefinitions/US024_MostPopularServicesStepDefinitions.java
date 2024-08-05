@@ -22,6 +22,7 @@ public class US024_MostPopularServicesStepDefinitions {
 
         for (int i = 0; i <4 ; i++) {
 
+
         Assert.assertTrue(mostPopularServices.mainPageMostPopularServiceLocationList.get(i).isDisplayed());
         Assert.assertTrue(mostPopularServices.mainPageMostPopularServicesInfoList.get(i).isDisplayed());
         Assert.assertTrue(mostPopularServices.mainPageMostPopularServicesProviderList.get(i).isDisplayed());
