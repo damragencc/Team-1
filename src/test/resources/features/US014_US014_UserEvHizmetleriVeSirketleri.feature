@@ -14,7 +14,7 @@ Feature: US014 Bir kullanici olarak Ev Hizmetler'ine ait şirketleri ve hizmetle
          When "Categories" bolumune tıklar
          Then Acılan dropdown menude "Home Services" bolumunu goruntuler
          When "Home Services" bolumune tiklar
-         And sayfayi kapatir
+         And Sayfayi kapatir
 
 
 
@@ -45,20 +45,22 @@ Feature: US014 Bir kullanici olarak Ev Hizmetler'ine ait şirketleri ve hizmetle
 
   Scenario: TC04 By clicking on the filter icon and selecting the store section, the requested information must be entered in the sections in the search form on the page that opens.
 
-          Then Filter iconunu goruntuler ve aktif oldugunu dogrular
-          When Filter iconuna tıklar
-          When Shops butonuna tıklar
-          Then Acilan sayfa’a bulunan search formundaki alanlar(Location,Sort By,Keyword,Categories,Sub Category,Price Range) ve Search butonu görüntüler
-          Then Search butonunun aktif olugunu dogrular
-          When Form'da istenilen bilgileri girer
+          Then "Filter" iconunu goruntuler ve aktif oldugunu dogrular
+          When "Filter" iconuna tıklar
+          When "Shops" butonuna tıklar
+          Then Acilan sayfa’a bulunan search formundaki alanlar("Location","Sort By","Keyword","Categories","Sub Category","Price Range") ve "Search" butonu görüntüler
+          Then "Search" butonunun aktif olugunu dogrular
+          When "Form"'da "Location","Sort By","Keyword","Categories","Sub Category","Price Range" bilgilerini girer
+          And sayfayi kapatir
+
+
+    #When Search butonuna tıklar
 
 
 
 
-   Scenario:  TC05 By clicking on the filter icon and selecting the service section, the requested information must be entered in the sections of the search form on the page that opens.
 
-          * Filter iconuna tıklar
-          * Service butonuna tıklar
+
 
 
 

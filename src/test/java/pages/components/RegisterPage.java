@@ -95,7 +95,7 @@ public class RegisterPage {
 
     public void CheckBoxVePhoneNumber(String ulke,String phoneNumber){
 
-        actions.sendKeys(ulkeCheckBoxKutusu).click().sendKeys(ConfigReader.
+       actions.sendKeys(ulkeCheckBoxKutusu).click().sendKeys(ConfigReader.
                 getProperty(ulke)).sendKeys(Keys.ENTER).sendKeys(ConfigReader
                 .getProperty(phoneNumber)).perform();
 
