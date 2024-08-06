@@ -1,12 +1,19 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
 import pages.components.RegisterPage;
 import pages.components.TestPage;
+import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.awt.event.KeyEvent;
 
 public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
 
@@ -105,6 +112,8 @@ public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
 
     @Given("{string} hizmetine tıklar")
     public void leak_detection_hizmetine_tıklar(String leakDetection) {
+
+        ReusableMethods.bekle(2);
       testPage.serviceLeakDetection.click();
     }
 
@@ -132,5 +141,51 @@ public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
         registerPage.beklemeSuresi();
     }
 
+    @Then("{string} iconunu goruntuler ve aktif oldugunu dogrular")
+    public void filter_iconunu_goruntuler_ve_aktif_oldugunu_dogrular(String filter) {
+
+        Assert.assertTrue(testPage.filterIconu.isDisplayed());
+        Assert.assertTrue(testPage.filterIconu.isEnabled());
+    }
+    @When("{string} iconuna tıklar")
+    public void filter_iconuna_tıklar(String filter) {
+
+        testPage.filterIconu.click();
+    }
+    @When("Shops butonuna tıklar")
+    public void shops_butonuna_tıklar() {
+        testPage.shopsButonu.click();
+
+    }
+    @Then("Acilan sayfa’a bulunan search formundaki alanlar\\({string},{string},{string},{string},{string},{string}) ve {string} butonu görüntüler")
+    public void acilan_sayfa_a_bulunan_search_formundaki_alanlar_location_sort_by_keyword_categories_sub_category_price_range_ve_search_butonu_görüntüler(String location,String sortBy,String keyword,String categories,String subCategories,String priceRange,String search) {
+            testPage.filterFormTextleri();
+    }
+    @Then("{string} butonunun aktif olugunu dogrular")
+    public void search_butonunun_aktif_olugunu_dogrular(String search) {
+
+        Assert.assertTrue(testPage.searchButonu.isEnabled());
 
 }
+
+    @When("{string}'da {string},{string},{string},{string},{string},{string} bilgilerini girer")
+    public void da_sort_by_keyword_price_range_bilgilerini_girer(String form, String location, String sortBy,String keyword, String Categories,String subCategory,String priceRange) throws InterruptedException {
+
+             testPage.filterLocationTextBox.click();
+             testPage.filterLocationTextBox.sendKeys(ConfigReader.getProperty(location));
+             testPage.filterSortByTextBox.click();
+             testPage.sortByDropDownMenuPriceLowToHigh.click();
+             registerPage.beklemeSuresi();
+             testPage.filterKeywordtextBox.sendKeys(ConfigReader.getProperty(keyword));
+
+             testPage.filterSubCategoryTextBox.click();
+
+         actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).perform();
+
+
+
+          registerPage.beklemeSuresi();
+
+    }
+
+    }
