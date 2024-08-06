@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-public class US002_ÜstBarlarinTestEdilmesi {
+public class US02 {
 
     private WebDriver driver;
 
@@ -71,5 +71,7 @@ public class US002_ÜstBarlarinTestEdilmesi {
         }
     }
 
-
+    
 }
+
+
