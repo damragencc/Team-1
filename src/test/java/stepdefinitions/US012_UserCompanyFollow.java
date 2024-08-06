@@ -98,19 +98,4 @@ public class US012_UserCompanyFollow {
         HeaderComp.searchLocation.sendKeys("Turkey");
 
     }
-
-
-
-
 }
-
-
-
-}
-
-
-
-
-
-
-
