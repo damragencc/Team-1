@@ -3,6 +3,8 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.components.HeaderComp;
 import pages.components.MostPopularServicesMainPage;
 import utilities.Driver;
@@ -21,6 +23,7 @@ public class US024_MostPopularServicesStepDefinitions {
     public void ilgili_hizmete_ait_asagidaki_bilgilerinin_gorunur_oldugunu_dogrular_hizmet_ismi_provider_adi_konum_fiyat() {
 
         for (int i = 0; i <4 ; i++) {
+
 
         Assert.assertTrue(mostPopularServices.mainPageMostPopularServiceLocationList.get(i).isDisplayed());
         Assert.assertTrue(mostPopularServices.mainPageMostPopularServicesInfoList.get(i).isDisplayed());
@@ -44,27 +47,40 @@ public class US024_MostPopularServicesStepDefinitions {
 
     @Given("Most popular Services basligina gider")
     public void most_popular_services_basligina_gider() {
-        ReusableMethods.scrollToElement(mostPopularServices.mainPageMostPopularServicesHeader);
+        ReusableMethods.scrollToElement(mostPopularServices.mainPageMostPopularServicesViewAllButton);
 
     }
-    @Given("Slayderın {int}. noktasina tıklar")
-    public void slayderın_noktasina_tıklar(Integer sliderNokta) {
-        String dinamikLocate="(//button[@role='button'])["+(sliderNokta+4)+"]";
-        Driver.getDriver().findElement(By.xpath(dinamikLocate)).click();
-
-
-    }
-    @Given("Most Popular Services kisminda yer alan  {string} tiklar")
-    public void most_popular_services_kisminda_yer_alan_tiklar(String string) {
+    @Given("Slayderın ikinci noktasina tıklar")
+    public void slayderın_ikinci_noktasina_tıklar() {
+        mostPopularServices.mainPageMostPopularServicesSlider2.click();
+        ReusableMethods.bekle(2);
 
     }
-    @Given("Acilan sayfanin ilgili {string} sayfasina yonlendirdigini dogrular")
-    public void acilan_sayfanin_ilgili_sayfasina_yonlendirdigini_dogrular(String string) {
+    @Given("Slayderın ucuncu noktasina tıklar")
+    public void slayderın_ucuncu_noktasina_tıklar() {
+      mostPopularServices.mainPageMostPopularServicesSlider3.click();
+        ReusableMethods.bekle(2);
+    }
+
+    @Given("Most Popular Services kisminda yer alan  {int}. service tiklar ve ilgili sayfaya yonlendirdigini dogrular")
+    public void most_popular_services_kisminda_yer_alan_service_tiklar(int i) {
+
+            String dinamikXpathMainPtext="(//div[@class='featute-info'])["+i+"]";
+            String textMainPageService=Driver.getDriver().findElement(By.xpath(dinamikXpathMainPtext)).getText();
+            String dinamikXpathMainPhoto="(//img[@class='categorie-img'])["+(10+i)+"]";
+            ReusableMethods.bekle(3);
+            Driver.getDriver().findElement(By.xpath(dinamikXpathMainPhoto)).click();
+            Assert.assertTrue(textMainPageService.contains(mostPopularServices.acilanServiceBaslik.getText()));
 
     }
+
+
+
+
+
     @Given("Anasayfaya geri doner.")
     public void anasayfaya_geri_doner() {
-
+    Driver.getDriver().navigate().back();
     }
 
 
