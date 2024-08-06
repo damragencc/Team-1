@@ -31,7 +31,7 @@ Feature: Kayıtlı bir kullanici (provider) olarak müsterilerime ödül verebil
     * Listede Action basliginin altindaki Add rewards butonunun ve view reward history linkinin goruntulendigini ve tiklanabilir oldugunu dogrular
     * sayfayi kapatir
 
-  @wip
+
   Scenario: TC_004-Dashboard rewards tiklanarak ilgili sayfaya gidilmesi,siparisi tamamlamis musterilere add rewards formu gorunurluk testi
     * Kullanıcı ilgili urle gider
     * "providerEmail" ve "providerPassword" ile giris yapar

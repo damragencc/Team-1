@@ -1,4 +1,4 @@
-
+@wip
 Feature: Bir kullanici olarak sitede en populer hizmetleri inceleyip randevu oluşturabilecegim bir alan olmasını istiyorum
 
   Scenario:TC_001-Anasayfa most popular basligi altindaki linklerin gorunur ve tiklanabilirliginin dogrulanmasi
