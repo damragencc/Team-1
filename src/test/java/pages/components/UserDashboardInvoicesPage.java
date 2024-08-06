@@ -23,4 +23,33 @@ public class UserDashboardInvoicesPage {
     @FindBy (xpath = "//*[text()='Export All']")
     public WebElement expertAllButonu;
 
+    @FindBy (id = "from_date")
+    public WebElement fromDateKutusu;
+
+    @FindBy (id = "to_date")
+    public WebElement toDateKutusu;
+
+    @FindBy (xpath = "(//*[@class='ui-state-default'])[1]")
+    public WebElement ayinIlkGunu;
+
+    @FindBy (xpath = "(//*[@class='ui-state-default'])[30]")
+    public WebElement ayinSonGunu;
+
+    @FindBy (xpath = "(//*[@class='ui-state-default'])[9]")
+    public WebElement ayinOnuncuGunu;
+
+    @FindBy (xpath = "(//*[@class='fa fa-search'])[1]")
+    public WebElement searchButonu;
+
+    @FindBy (xpath = "//*[text()='No records found']")
+    public WebElement noRecordsFoundYazisi;
+
+    @FindBy (xpath = "//*[@class='fa fa-times']")
+    public WebElement carpiIkonu;
+
+    @FindBy (xpath = "//*[@class='navbar-header']")
+    public WebElement anaSayfaLogo;
+
+
+
 }
