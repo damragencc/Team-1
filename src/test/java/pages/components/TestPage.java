@@ -235,7 +235,6 @@ public class TestPage {
 
 
 
-
     @FindBy(xpath = "(//*[@id='service_location'])[1]")
     public WebElement filterLocationTextBox;
 
@@ -299,6 +298,12 @@ public class TestPage {
 
 
 
+
+
+
+
+    @FindBy(xpath = "(//*[@id='service_location'])[1]")
+    public WebElement filterLocationTextBox;
 
 
 
