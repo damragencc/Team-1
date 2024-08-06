@@ -34,4 +34,25 @@ public class LoginLogoutPage {
 
     @FindBy(xpath = "//*[text()='Logout']")
     public WebElement logoutDropDown;
+
+    @FindBy(xpath = "(//*[text()='Business Services'])[2]")
+    public WebElement businessServices; // Login olduktan sonra açılan sayfadaki element
+
+    @FindBy(xpath = "//*[@id='shops-tab']")
+    public WebElement businessServicesShop; // login>businessServices>shops
+
+    @FindBy(xpath = "//*[@id='services-tab']")
+    public WebElement businessServicesService; // login>businessServices>shops
+
+    @FindBy(xpath = "(//*[@class='me-2'])[3]")
+    public WebElement filterButton; //login>businessServices>filter
+
+    @FindBy(xpath = "(//*[@id='service_location'])[1]")
+    public WebElement location;  //login>businessServices>filter>location
+
+    @FindBy(xpath = "//*[@id='shop_count']")
+    public WebElement shopsFoundText;
+
+
+
 }
