@@ -4,13 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
 import pages.components.RegisterPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class US044_LogoutTestStepDefinitions {
 
@@ -43,11 +41,22 @@ public class US044_LogoutTestStepDefinitions {
         headerComp.passwordEnterButton.click();
     }
     @When("Kullaci bilgilerini girer.")
-    public void kullaci_bilgilerini_girer() {headerComp.performLogIn("toprakyemelek.user@ommarket.com","Ommarket.2607");}
+    public void kullaci_bilgilerini_girer() {
+        headerComp.performLogIn("toprakyemelek.user@ommarket.com","Ommarket.2607");
+    }
     @Then("Header bolumundeki profil ikonunun goruntulendigi dogrulanir.")
     public void header_bolumundeki_profil_ikonunun_goruntulendigi_dogrulanir() {
         headerComp.profilIkonu.isDisplayed();
     }
+
+    @When("logout butonuna tiklar")
+    public void logout_butonuna_tiklar() {headerComp.logoutButton.click();
+    }
+
+    @And("Cıkıs yapildigi dogrulanir.")
+    public void cıkıs_yapildigi_dogrulanir() {headerComp.headerLoginButton.isDisplayed();}
+
+
 
 
 }
