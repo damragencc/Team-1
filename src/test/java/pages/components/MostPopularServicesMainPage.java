@@ -3,14 +3,17 @@ package pages.components;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import stepdefinitions.US024_MostPopularServicesStepDefinitions;
 import utilities.Driver;
 
 import java.util.List;
 
 public class MostPopularServicesMainPage {
+
     public MostPopularServicesMainPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
 
     @FindBy(xpath = "//h2[text()='Most Popular Services']")
     public WebElement mainPageMostPopularServicesHeader; //anasayfa MostPopularServicesBaslik
@@ -18,7 +21,8 @@ public class MostPopularServicesMainPage {
     @FindBy(xpath = "(//*[@class='owl-dots'])[2]")
     public WebElement mainPageMostPopularServicesSlider; //anasayfa MostPopularServicesSlider
 
-    @FindBy(xpath = "(//*[@class='owl-stage'])[3]")public List<WebElement> sliderServicelerListesi;
+    @FindBy(xpath = "(//*[@class='owl-stage'])[3]")
+    public List<WebElement> sliderServicelerListesi;
 
     @FindBy(xpath = "(//a[@class='btn btn-viewall'])[2]")
     public WebElement mainPageMostPopularServicesViewAllButton; //anasayfa MostPopularServicesViewAll
@@ -49,4 +53,6 @@ public class MostPopularServicesMainPage {
 
     @FindBy(xpath = "//h6[text()]")
     public List<WebElement> mainPageMostPopularServicePriceList; //anasayfa MostPopularServicesPrice
+    @FindBy(xpath = "(//h2)[1]")
+    public WebElement acilanServiceBaslik;
 }

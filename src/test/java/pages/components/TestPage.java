@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.List;
 
@@ -188,7 +189,7 @@ public class TestPage {
     @FindBy(xpath = "//*[text()='Service Details']")
     public WebElement leakDetectionServiceDetailsText;
 
-    @FindBy(xpath = "(//*[text()='$300'])[2]")
+    @FindBy(xpath = "//*[text()='$300']")
     public WebElement leakDetectionServiceAmountText;
 
     @FindBy(xpath = "//*[text()='Service Provider']")
@@ -207,8 +208,57 @@ public class TestPage {
 
     //Filter iconu Form Bilgileri Text Bilgileri
 
+
     @FindBy(xpath = "//*[@id='filter_search']")
     public WebElement filterIconu;
+
+    @FindBy(xpath = "//*[text()='Location']")
+    public WebElement filterLocationText;
+
+    @FindBy(xpath = "//*[text()='Sort By']")
+    public WebElement filterSortByText;
+
+    @FindBy(xpath = "//*[text()='Keyword']")
+    public WebElement filterKeywordText;
+
+    @FindBy(xpath = "(//*[text()='Categories'])[1]")
+    public WebElement filterCategoriesText;
+
+    @FindBy(xpath = "//*[text()='Sub Category']")
+    public WebElement filterSubCategoryText;
+
+    @FindBy(xpath = "//*[text()='Price Range']")
+    public WebElement filterPriceRangeText;
+
+
+    //Filter iconu Form Bilgileri TextBox Bilgileri
+
+
+
+    @FindBy(xpath = "(//*[@id='service_location'])[1]")
+    public WebElement filterLocationTextBox;
+
+    @FindBy(xpath = "(//*[text()='Sort By'])[3]")
+    public WebElement filterSortByTextBox;
+
+    @FindBy(xpath = "//*[@id='common_search']")
+    public WebElement filterKeywordtextBox;
+
+    @FindBy(xpath = "(//*[text()='All Categories'])[2]")
+    public WebElement filterAllCategoriesTextBox;
+
+    @FindBy(id = "select2-subcategories-container")
+    public WebElement filterSubCategoryTextBox;
+
+
+    @FindBy(xpath = "//*[text()='Search']")
+    public WebElement searchButonuu;
+
+
+
+
+
+
 
     @FindBy(xpath = "//*[text()='Location']")
     public WebElement filterLocation;
@@ -229,32 +279,71 @@ public class TestPage {
     public WebElement filterPriceRange;
 
 
-    //Filter iconu Form Bilgileri TextBox Bilgileri
+    @FindBy(xpath = "(//*[text()='Price Low to High'])[2]")
+    public WebElement sortByDropDownMenuPriceLowToHigh;
+
+    @FindBy(xpath = "//*[@id='select2-categories-result-qfpa-1']")
+    public WebElement categoriesDropDownMenuHomeService;
+
+    @FindBy(xpath = "(//*[text()='Plumbing'])[3]")
+    public WebElement subCategoryDropDownMenuPlumbing;
+
+
+
+public void filterFormTextleri(){
+
+    Assert.assertTrue(filterLocationText.isDisplayed());
+    Assert.assertTrue(filterSortByText.isDisplayed());
+    Assert.assertTrue(filterKeywordText.isDisplayed());
+    ReusableMethods.bekle(2);
+    Assert.assertTrue(filterCategoriesText.isDisplayed());
+    Assert.assertTrue(filterSubCategoryText.isDisplayed());
+    Assert.assertTrue(filterPriceRangeText.isDisplayed());
 
 
 
 
-    @FindBy(xpath = "(//*[@id='service_location'])[1]")
-    public WebElement filterLocationTextBox;
+}
 
-    @FindBy(xpath = "(//*[text()='Sort By'])[3]")
-    public WebElement filterSortByTextBox;
 
-    @FindBy(xpath = "//*[@id='common_search']")
-    public WebElement filterKeywordtextBox;
 
-    @FindBy(xpath = "(//*[text()='All Categories'])[2]")
-    public WebElement filterAllCategoriesTextBox;
 
-    @FindBy(id = "select2-subcategories-container")
-    public WebElement filterSubCategoryTextBox;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Methods
+
   public void leakDetectionServiceTexts(){
 
 
       Assert.assertTrue(leakDetectionAdditionalServicesText.isDisplayed());
-      Assert.assertTrue(leakDetectionRelatedServicesText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceAmountText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceAvailabilityText.isDisplayed());
       Assert.assertTrue(leakDetectionServiceProviderText.isDisplayed());

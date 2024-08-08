@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         tags = "@Damra",
         dryRun = true
 
-
+   
 )
 public class Runner {
     /*
@@ -60,8 +60,6 @@ public class Runner {
            hem runner'da eklenen "html:target/html-reports/rapor.html" raporu olusturulur
            hem de plugin olarak ekledigimiz gelismis raporlar olusturulur
      */
-    //DAMRA GENC
-    //%&'+'^!JDSAJSDA
-    //ASdasdada
+ 
 
 }
