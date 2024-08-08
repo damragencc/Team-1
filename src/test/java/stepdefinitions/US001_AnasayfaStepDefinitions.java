@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import org.junit.Assert;
 import pages.components.HeaderComp;
 import pages.components.RegisterPage;
 import utilities.ConfigReader;
@@ -25,12 +26,13 @@ public class US001_AnasayfaStepDefinitions {
     }
     @Then("Anasayfayi goruntuler")
     public void anasayfayi_goruntuler() {
-        loginPage.anaSayfaGoruntuleme.isDisplayed();
+       Assert.assertTrue(loginPage.anaSayfaGoruntuleme.isDisplayed());
 
     }
     @Then("Sitenin tittleri {string} oldugunu dogrular")
     public void sitenin_tittleri_oldugunu_dogrular(String string) {
-        loginPage.siteninTitle.isDisplayed();
+
+        Assert.assertTrue(loginPage.siteninTitle.isDisplayed());;
     }
 
     @When("Become a User butonuna tiklar")

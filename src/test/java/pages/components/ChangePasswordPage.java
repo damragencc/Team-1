@@ -9,6 +9,7 @@ import utilities.Driver;
 public class ChangePasswordPage {
 
     public ChangePasswordPage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
