@@ -4,13 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
 import pages.components.RegisterPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class US044_LogoutTestStepDefinitions {
 
