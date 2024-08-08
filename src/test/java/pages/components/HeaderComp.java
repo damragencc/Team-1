@@ -16,7 +16,7 @@ public class HeaderComp {
     @FindBy(xpath = "//*[text()='Become a User']")
     public WebElement becomeAuser; // Become a User butonu
 
-    @FindBy(xpath = "//a[@class='btn btn-signin']")
+    @FindBy(xpath = "//*[@class='btn btn-signin']")
     public WebElement headerLoginButton; // Login butonu
 
     @FindBy(xpath = "//*[@id='login_email']")
@@ -68,4 +68,7 @@ public class HeaderComp {
         passwordBox.sendKeys(password);
         passwordEnterButton.click();
     }
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[8]")
+    public WebElement logoutButton;
 }
