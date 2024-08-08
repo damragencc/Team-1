@@ -126,6 +126,9 @@ public class HeaderComp {
     @FindBy(xpath = "(//*[@class='select2-selection__arrow'])[1]")
     public WebElement sortByArrow; // Sort By dropdown arrow
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[8]")
+    public WebElement logoutButton;
+
     public void performLogIn(String mail, String password) {
         headerLoginButton.click();
         emailIdBox.sendKeys(mail);
