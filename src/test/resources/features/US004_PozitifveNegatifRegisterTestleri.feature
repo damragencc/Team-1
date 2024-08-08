@@ -38,7 +38,7 @@ Feature:US05 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin
     And sayfayi kapatir
 
     Examples:
-      |Name |Mail|Password|MobileNumber|ulke|
+      |Name     |Mail    |Password    |MobileNumber    |ulke|
       |userName |userMail|userPassword|userMobileNumber|userUlke|
 
 
@@ -61,7 +61,7 @@ Feature:US05 Bir kullanici olarak sitenin fonksiyonlarindan faydalanabilmek icin
     And  sayfayi kapatir
 
     Examples:
-      |Name|
+      |Name   |
       |       |
 
 

@@ -1,3 +1,5 @@
+
+@Damra
 Feature: As a registered user (provider), I want to be able to organize my working days and hours.
 
   Background:
@@ -89,5 +91,20 @@ Feature: As a registered user (provider), I want to be able to organize my worki
       * "Availability Time Added Succesfully" onay mesaji goruntulenir
 
 
+#Scenario Outline:  TC04 In the Availability section, click on the Monday checkbox and set the hours in the From Time and To time text boxes.
 
+
+     # |option|
+    # |<option1>|
+    #  |<option2>|
+    #  |<option3>|
+     # |<option4>|
+    #  |<option5>|
+    #  |<option6>|
+
+   # Examples:
+     # |DropDownType|option1 |option2  ||option3  ||option4||option5||option6 |
+    #  |Days        |Monday  |Tuesday  ||Wednesday|Thursday||Friday ||Saturday|
+    #  |FromTİme    |09:00   |09:00    ||09:00    ||09:00  ||09:00  ||09:00   |
+    #  |To Time     |05:00   |05:00    ||05:00    ||05:00  ||05:00  ||05:00   |
 
