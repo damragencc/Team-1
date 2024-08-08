@@ -9,8 +9,13 @@ Feature: Kayıtlı bir kullanıcı (User) olarak sayfadan güvenli bir sekilde c
     And Header bolumundeki profil ikonunun goruntulendigi dogrulanir.
     And sayfayi kapatir
 
-
-  Scenario: TC02 Kulanici
+  Scenario: TC02 Kulanici basarili bir sekilde cıkıs yapabilmelidir.
+    When Kullaci bilgilerini girer.
+    And Header bolumundeki profil ikonunun goruntulendigi dogrulanir.
+    And Acilan sayfada Profil ikonuna tiklar
+    And logout butonuna tiklar
+    And Cıkıs yapildigi dogrulanir.
+    And sayfayi kapatir
 
 
 
