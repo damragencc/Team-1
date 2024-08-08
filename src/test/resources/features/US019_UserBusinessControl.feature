@@ -35,3 +35,10 @@ Scenario: TC10 When the Shops icon is clicked, the relevant services should be d
   And it is tested that the "Visit Store" icon is visible on the Service card
   Then click on the cards, it must be verified that it goes to the relevant service
 
+Scenario: TC11 When the desired service is selected, "Shop Detail", "Shop Availability", "Services", "number of services" and general information should be accessible.
+
+  Given User when the desired service is selected, "Shop Detail", "Shop Availability", "Services", "number of services" and general information should be accessible
+
+Scenario: TC12 Closes the page
+
+  Given Closes the page

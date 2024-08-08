@@ -248,7 +248,7 @@ public class TestPage {
 
     @FindBy(id = "select2-subcategories-container")
     public WebElement filterSubCategoryTextBox;
-
+/*
 
     @FindBy(xpath = "//*[text()='Search']")
     public WebElement searchButonu;
@@ -284,7 +284,6 @@ public class TestPage {
 
 
 
-
     @FindBy(xpath = "(//*[@id='service_location'])[1]")
     public WebElement filterLocationTextBox;
 
@@ -308,7 +307,7 @@ public class TestPage {
 
 public void filterFormTextleri(){
 
-      filterLocationText.isDisplayed();
+    filterLocationText.isDisplayed();
     filterSortByText.isDisplayed();
     filterKeywordText.isDisplayed();
     filterCategoriesText.isDisplayed();
@@ -421,7 +420,7 @@ public void filterFormTextleri(){
         Assert.assertTrue(pipeRepairLocation.isDisplayed());
         Assert.assertTrue(drainCleaningLocation.isDisplayed());
     }
-
+*/
 }
 
 
