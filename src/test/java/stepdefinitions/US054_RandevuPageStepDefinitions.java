@@ -43,6 +43,10 @@ public class US054_RandevuPageStepDefinitions {
         Assert.assertTrue(appoitmentPage.okayButton.isEnabled());
         appoitmentPage.okayButton.click();
 
+
+
+
+
     }
 
 
