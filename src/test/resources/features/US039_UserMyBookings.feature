@@ -131,19 +131,19 @@ Scenario: TC_007
     * Mybookings basligi altinda Complete Request sent by Provider durumundaki rezervasyonlarda ilgili butonlarin gorunur oldugunu dogrular
     * sayfayi kapatir
 
-    Scenario: TC_-016
+    Scenario: TC_016
       * Kullanıcı ilgili urle gider
       * "user Email" ve "user Password" girerek giris yapar
       * Header bolumundeki profil simgesine tiklar
       * MyBookings linkine tiklar
-      * Mybookings basligi altinda "Complete Request sent by Provider" durumundaki rezervasyonda Complete Request Accept butonuna tıklanır
+      * Mybookings basligi altinda Complete Request sent by Provider durumundaki rezervasyonda Complete Request Accept butonuna tıklanır
       * Acilan alertte Confirm ve Cancel butonlarının oldugunu dogrular
-      * Cancel butonuna tikladiginda alertin kapandıgı "Complete Request sent by Provider" tusunun tekrar tiklanabilir oldugu dogrulanir
+      * Cancel butonuna tikladiginda alertin kapandıgı Complete Request sent by Provider tusunun tekrar tiklanabilir oldugu dogrulanir
       * Complete Request Accept butonuna tıklanır
       * Acilan alertte Confirm butonuna tıklanır
       * Updated the booking status  yazisi  ve  okay butonu goruntulenir
       * Okay e tiklanir
-      * Rezervasyonun durumunun "Completed Accepted" olarak guncellendigi dogrulanir.
+      * sayfayi kapatir
 
     Scenario: TC_17
     * Kullanıcı ilgili urle gider

@@ -2,14 +2,12 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.Select;
 import pages.components.ContactUsPage;
 import pages.components.HeaderComp;
-import pages.components.UserMyBookingsPage;
+import pages.UserMyBookingsPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -289,6 +287,7 @@ Assert.assertTrue(userMyBookingsPage.reasonIsRequiredUyarisi.isDisplayed());
     public void veri_gonderildiginde_messages_kısmında_goruntulendigi_dogrulanir() {
         userMyBookingsPage.submitTypeYourMessage.click();
         ReusableMethods.wait(3);
+        System.out.println(userMyBookingsPage.chatBox.getText());
        Assert.assertEquals(userMyBookingsPage.chatBox.getText(),"Hello");
 
     }
@@ -298,6 +297,61 @@ Assert.assertTrue(userMyBookingsPage.reasonIsRequiredUyarisi.isDisplayed());
         Assert.assertTrue(userMyBookingsPage.reviewsPageHeader.isDisplayed());
 
     }
+    @Given("Mybookings basligi altinda Complete Request sent by Provider durumundaki rezervasyonda Complete Request Accept butonuna tıklanır")
+    public void mybookings_basligi_altinda_complete_request_sent_by_provider_durumundaki_rezervasyonda_complete_request_accept_butonuna_tıklanır() {
+        List<String> bookingListString = ReusableMethods.stringListeDonustur(userMyBookingsPage.bookingList);
+
+        for (int i = 0; i < bookingListString.size(); i++) {
+            if (bookingListString.get(i).contains("Complete Request sent by Provider")) {
+
+                userMyBookingsPage.checkCompReqIcon.click();
+
+            }
+        }
+    }
+
+    @Given("Acilan alertte Confirm ve Cancel butonlarının oldugunu dogrular")
+    public void acilan_alertte_confirm_ve_cancel_butonlarının_oldugunu_dogrular() {
+        userMyBookingsPage.confirmationBody.click();
+    Assert.assertTrue(userMyBookingsPage.compReqConfirmationConfirmButton.isDisplayed());
+        Assert.assertTrue(userMyBookingsPage.compReqConfirmationCancelButton.isDisplayed());
+    }
+    @Given("Cancel butonuna tikladiginda alertin kapandıgı Complete Request sent by Provider tusunun tekrar tiklanabilir oldugu dogrulanir")
+    public void cancel_butonuna_tikladiginda_alertin_kapandıgı_complete_request_sent_by_provider_tusunun_tekrar_tiklanabilir_oldugu_dogrulanir() {
+        userMyBookingsPage.compReqConfirmationCancelButton.click();
+        ReusableMethods.wait(3);
+        Assert.assertTrue(userMyBookingsPage.checkCompReqIcon.isEnabled());
+    }
+
+    @Given("Complete Request Accept butonuna tıklanır")
+    public void complete_request_accept_butonuna_tıklanır() {
+        ReusableMethods.wait(3);
+        userMyBookingsPage.checkCompReqIcon.click();
+
+    }
+    @Given("Acilan alertte Confirm butonuna tıklanır")
+    public void acilan_alertte_confirm_butonuna_tıklanır() {
+        ReusableMethods.wait(3);
+        userMyBookingsPage.compReqConfirmationConfirmButton.click();
+
+    }
+    @Given("Updated the booking status  yazisi  ve  okay butonu goruntulenir")
+    public void updated_the_booking_status_yazisi_ve_okay_butonu_goruntulenir() {
+        ReusableMethods.wait(3);
+    Assert.assertTrue(userMyBookingsPage.updatedBookingStatusUyarisi.isDisplayed());
+        ReusableMethods.wait(3);
+    Assert.assertTrue(userMyBookingsPage.okayButton.isDisplayed());
+
+    }
+    @Given("Okay e tiklanir")
+    public void okay_e_tiklanir() {
+        ReusableMethods.wait(3);
+        //userMyBookingsPage.okayButton.click();
+
+    }
+
+
+
 
 
 
