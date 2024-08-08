@@ -55,4 +55,6 @@ public class MostPopularServicesMainPage {
     public List<WebElement> mainPageMostPopularServicePriceList; //anasayfa MostPopularServicesPrice
     @FindBy(xpath = "(//h2)[1]")
     public WebElement acilanServiceBaslik;
+
+
 }

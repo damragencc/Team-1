@@ -1,4 +1,4 @@
-package pages.components;
+package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -135,5 +135,22 @@ public WebElement radioButtonsAppoinment;
 
     @FindBy(xpath = "//textarea[@id='notes']")
     public WebElement notesBox;
+
+    @FindBy(xpath = "//button[text()='confirm']")
+    public WebElement compReqConfirmationConfirmButton;
+
+    @FindBy(xpath = "//button[text()='cancel']")
+    public WebElement compReqConfirmationCancelButton;
+
+    @FindBy(xpath = "//div[@class='jconfirm-box jconfirm-hilight-shake jconfirm-type-default jconfirm-type-animated']")
+    public WebElement confirmationBody;
+
+    @FindBy(xpath = "//button[@id='submit']")
+    public WebElement confirmBookingButton;
+
+   /* @FindBy(xpath = "//div[@class='swal-modal']")
+    public WebElement modalOkay;
+    @FindBy(xpath = "//select[@class='form-control from_time checkTime']")
+    public WebElement timeSlot2;*/
 
 }
