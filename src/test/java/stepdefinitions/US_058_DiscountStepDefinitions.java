@@ -6,10 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import pages.ProviderServicesPage;
 import pages.ServiceOfferPage;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.List;
