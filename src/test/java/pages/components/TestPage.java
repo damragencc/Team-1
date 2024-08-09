@@ -255,7 +255,7 @@ public class TestPage {
 
     @FindBy(id = "select2-subcategories-container")
     public WebElement filterSubCategoryTextBox;
-
+/*
 
     @FindBy(xpath = "//*[text()='Search']")
     public WebElement searchButonuu;
@@ -296,7 +296,43 @@ public class TestPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "(//*[@id='service_location'])[1]")
+    public WebElement filterLocationTextBox;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public void filterFormTextleri(){
+
+
+    filterLocationText.isDisplayed();
+    filterSortByText.isDisplayed();
+    filterKeywordText.isDisplayed();
+    filterCategoriesText.isDisplayed();
+    filterSubCategoryText.isDisplayed();
+    filterPriceRangeText.isDisplayed();
 
     Assert.assertTrue(filterLocationText.isDisplayed());
     Assert.assertTrue(filterSortByText.isDisplayed());
@@ -305,6 +341,7 @@ public void filterFormTextleri(){
     Assert.assertTrue(filterCategoriesText.isDisplayed());
     Assert.assertTrue(filterSubCategoryText.isDisplayed());
     Assert.assertTrue(filterPriceRangeText.isDisplayed());
+ 
 
 
 
@@ -413,6 +450,9 @@ public void filterFormTextleri(){
         Assert.assertTrue(drainCleaningLocation.isDisplayed());
     }
 
+*/
+
+
 
     public void formBilgileri(String location,String keyword) throws InterruptedException {
 
@@ -431,6 +471,7 @@ public void filterFormTextleri(){
 
         registerPage.beklemeSuresi();
     }
+
 }
 
 

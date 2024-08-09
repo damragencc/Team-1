@@ -6,8 +6,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
+import pages.components.LoginLogoutPage;
 import pages.components.ProfileSettings;
 import pages.components.RegisterPage;
 import utilities.ConfigReader;
@@ -23,6 +26,7 @@ public class US040_DashboardProfilAyarlarıStepDefinitions {
     Actions actions = new Actions(Driver.getDriver());
 
     ProfileSettings profileSettings = new ProfileSettings();
+    LoginLogoutPage loginLogoutPage = new LoginLogoutPage();
     @Given("Kullanici {string} giderr")
     public void kullanici_gider(String Url) {
         Driver.getDriver().get(ConfigReader.getProperty(Url));
@@ -31,36 +35,39 @@ public class US040_DashboardProfilAyarlarıStepDefinitions {
     @Then("login butonuna tiklar.")
     public void login_butonuna_tiklar() {
         headerComp.headerLoginButton.click();
-    }
-    @Then("email olarak {string} bilgilerini girerr")
-    public void email_olarak_bilgilerini_girer(String EmailDashboard) {
-
-
-            headerComp.emailIdBox.sendKeys(ConfigReader.getProperty(EmailDashboard));
-
-
-    }
-    @Then("email login butonuna tiklar.")
-    public void emailLoginButonunaTiklar() {
-        headerComp.emailLoginButton.click();
+        ReusableMethods.bekle(2);
     }
 
+        @And("email olarak {string} bilgilerini girerr ve password olarak {string} girer")
+        public void emailOlarakBilgileriniGirerrVePasswordOlarakGirer(String emil, String password) {
+            ReusableMethods.bekle(1);
+            loginLogoutPage.mainPageLoginFormEmailbox
+                    .sendKeys(ConfigReader.getProperty(emil));
+            ReusableMethods.bekle(1);
+            loginLogoutPage.mainPageLoginFormEmailbox.sendKeys(" ", Keys.ENTER);
+            ReusableMethods.bekle(1);
+            loginLogoutPage.mainPageLoginFormEmailboxLoginButton
+                    .click();
 
-    @Then("password olarak {string} bilgilerini girerr")
-    public void password_olarak_bilgilerini_girer(String password) {
-        headerComp.passwordBox.sendKeys(ConfigReader.getProperty(password));
+            ReusableMethods.bekle(1);
+            loginLogoutPage.mainPageLoginFormPasswordbox
+                    .sendKeys(ConfigReader.getProperty(password));
+            loginLogoutPage.mainPageLoginFormPasswordEnterButton
+                    .click();
+        }
 
-    }
-    @Then("enter butonuna tiklarr.")
-    public void enter_butonuna_tiklar() {
-        headerComp.passwordEnterButton.click();
-    }
+
+
+
+
+
     @Then("basarili giris yapilabildiğini test ederr")
     public void basarili_giris_yapilabildiğini_test_eder() {
         Assert.assertTrue(registerPage.anaSayfaGoruntuleme.isDisplayed());
     }
     @Then("{int} saniye beklerr")
     public void saniye_bekler(Integer saniye) {
+
         ReusableMethods.bekle(saniye);
     }
 
@@ -111,6 +118,7 @@ public class US040_DashboardProfilAyarlarıStepDefinitions {
 
     @Then("Profil Settings sayfasında e-mail Textboxa görür")
     public void profilSettingsSayfasındaEMailTextboxaGörür() {
+
         profileSettings.emailTextbox.isDisplayed();
     }
 
@@ -119,100 +127,83 @@ public class US040_DashboardProfilAyarlarıStepDefinitions {
         profileSettings.nameTexbox.isDisplayed();
     }
 
-    @Then("sayfada mobile number görür")
-    public void sayfadaMobileNumberGörür() {
-
-        profileSettings.mobileNumber.isDisplayed();
-    }
-
-    @Then("sayfada Date of birth görür")
-    public void sayfadaDateOfBirthGörür() {
-        profileSettings.DateOfBirth.isDisplayed();
-
-    }
-
-    @Then("Sayfada Genderı görür")
-    public void sayfadaGenderıGörür() {
-
-        profileSettings.GenderTextbox.isDisplayed();
-    }
 
 
-    @Then("sayfada Address görür")
-    public void sayfadaAddressGörür() {
-        profileSettings.AdressTextbox.isDisplayed();
+
+    @And("Mobile Number yeniNumber girer")
+    public void mobileNumberYeniNumberGirer() {
+
+profileSettings.mobileNumber.click();
+ReusableMethods.bekle(1);
+profileSettings.mobileNumber.clear();
+ReusableMethods.bekle(1);
+profileSettings.mobileNumber.sendKeys("+1 533521555151",Keys.ENTER);
 
     }
 
-    @Then("sayfada Conturyi görür")
-    public void sayfadaConturyiGörür() {
-        profileSettings.CountyTextbox.isDisplayed();
+    @And("Date of Birth dogumtarihi girer")
+    public void dateOfBirthDogumtarihiGirer() {
+
+    profileSettings.DateOfBirth.click();
+    ReusableMethods.bekle(1);
+    profileSettings.DateOfBirth.clear();
+    ReusableMethods.bekle(1);
+
+    profileSettings.DateOfBirth.sendKeys("04-02-1999",Keys.ENTER);
+    }
+    @Then("Gender bilgilerini girer")
+    public void genderBilgileriniGirer() {
+        profileSettings.GenderTextbox.click();
+        profileSettings.FemaleGender.click();
+    }
+    @And("Adress bilgileri adressyeni girer")
+    public void adressBilgileriAdressyeniGirer() {
+
+        ReusableMethods.scrollToElement(profileSettings.AdressTextbox);
+        ReusableMethods.bekle(1);
+        profileSettings.AdressTextbox.click();
+        ReusableMethods.bekle(1);
+        profileSettings.AdressTextbox.clear();
+        profileSettings.AdressTextbox.sendKeys("isparta Turkey",Keys.ENTER);
+    }
+
+    @And("Country yeniCountry girer")
+    public void countryYeniCountryGirer() {
+        ReusableMethods.scrollToElement(profileSettings.CountyTextbox);
+        ReusableMethods.bekle(1);
+        profileSettings.CountyTextbox.click();
+        profileSettings.ulkeSecimi.click();
 
     }
 
-    @Then("sayafada State görür")
-    public void sayafadaSatateGörür() {
-        profileSettings.SatateTextbox.isDisplayed();
-
+    @And("State Stateyeni girer")
+    public void stateStateyeniGirer() {
+        ReusableMethods.scrollToElement(profileSettings.SatateTextbox);
+        ReusableMethods.bekle(1);
+        profileSettings.SatateTextbox.click();
+     profileSettings.statesecimiii.click();
     }
 
-    @Then("sayfada City i görür")
-    public void sayfadaCityIGörür() {
-        profileSettings.CityTextbox.isDisplayed();
-
-    }
-
-    @Then("sayfada Postal code görür")
-    public void sayfadaPostalCodeGörür() {
-        profileSettings.PostalCodeTextbox.isDisplayed();
-
-    }
-
-
-    @And("Mobile Number {string} girer")
-    public void mobileNumberGirer(String number) {
-        profileSettings.mobileNumber.sendKeys(ConfigReader.getProperty(number));
-
-
-    }
-
-    @And("Date of Birth {string} girer")
-    public void dateOfBirthGirer(String dogum) {
-        profileSettings.DateOfBirth.sendKeys(ConfigReader.getProperty(dogum));
-
-    }
-
-    @And("Adress bilgileri {string} girer")
-    public void adressBilgileriGirer(String adres) {
-        profileSettings.AdressTextbox.sendKeys(ConfigReader.getProperty(adres));
+    @And("City Cityyeni girer")
+    public void cityCityyeniGirer() {
+        ReusableMethods.scrollToElement(profileSettings.SatateTextbox);
+        ReusableMethods.bekle(1);
+        profileSettings.CityTextbox.click();
+        profileSettings.cityysecimii.click();
 
 
     }
 
-    @And("Country {string} girer")
-    public void countryGirer(String ulke) {
-        profileSettings.CountyTextbox.sendKeys(ConfigReader.getProperty(ulke));
+    @And("Postal Code postaKodu girer")
+    public void postalCodePostaKoduGirer() {
+        profileSettings.PostalCodeTextbox.click();
+        profileSettings.PostalCodeTextbox.clear();
+        profileSettings.PostalCodeTextbox.sendKeys("254896",Keys.ENTER);
     }
-
-    @And("State {string} girer")
-    public void stateGirer(String state) {
-        profileSettings.SatateTextbox.sendKeys(ConfigReader.getProperty(state));
-
-    }
-
-    @And("City {string} girer")
-    public void cityGirer(String City) {
-        profileSettings.CityTextbox.sendKeys(ConfigReader.getProperty(City));
-
-    }
-
-    @And("Postal Code {string} girer")
-    public void postalCodeGirer(String postakodu) {
-        profileSettings.PostalCodeTextbox.sendKeys(ConfigReader.getProperty(postakodu));
-    }
-
     @Then("Uptade butonuna tıklar")
     public void uptadeButonunaTıklar() {
+        ReusableMethods.scrollToElement(profileSettings.ProfilSettingUptade);
+        ReusableMethods.bekle(1);
         profileSettings.ProfilSettingUptade.click();
 
     }
@@ -232,4 +223,16 @@ public class US040_DashboardProfilAyarlarıStepDefinitions {
         Assert.assertTrue(registerPage.anaSayfaGoruntuleme.isDisplayed());
 
     }
+
+
+    @Given("Profil Setting sayfasındaki alanlar \\(Name, Email, Mobile Number, Date of birth, Gender, Address, Country, State, City, Postal Code) görür")
+    public void profilSettingSayfasındakiAlanlarNameEmailMobileNumberDateOfBirthGenderAddressCountryStateCityPostalCodeGörür() {
+
+        ReusableMethods.scrollToElement(profileSettings.ProfilSettingAlanları);
+        ReusableMethods.bekle(1);
+        profileSettings.ProfilSettingAlanları.isDisplayed();
+    }
+
+
+
 }
