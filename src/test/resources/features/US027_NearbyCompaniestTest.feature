@@ -1,3 +1,4 @@
+
 Feature: US_027
 
   As a visitor, I would like to have an area on the

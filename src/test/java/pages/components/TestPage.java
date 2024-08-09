@@ -1,9 +1,12 @@
 
 package pages.components;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -18,6 +21,9 @@ public class TestPage {
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+    Actions actions=new Actions(Driver.getDriver());
+    RegisterPage registerPage=new RegisterPage();
 
     public List<WebElement> getServiceLinks() {
         return serviceLinks;
@@ -301,6 +307,7 @@ public class TestPage {
 
 
 
+
     @FindBy(xpath = "(//*[@id='service_location'])[1]")
     public WebElement filterLocationTextBox;
 
@@ -316,16 +323,17 @@ public class TestPage {
 
 
 
+
 public void filterFormTextleri(){
 
-<<<<<<< HEAD
+
     filterLocationText.isDisplayed();
     filterSortByText.isDisplayed();
     filterKeywordText.isDisplayed();
     filterCategoriesText.isDisplayed();
     filterSubCategoryText.isDisplayed();
     filterPriceRangeText.isDisplayed();
-=======
+
     Assert.assertTrue(filterLocationText.isDisplayed());
     Assert.assertTrue(filterSortByText.isDisplayed());
     Assert.assertTrue(filterKeywordText.isDisplayed());
@@ -333,7 +341,7 @@ public void filterFormTextleri(){
     Assert.assertTrue(filterCategoriesText.isDisplayed());
     Assert.assertTrue(filterSubCategoryText.isDisplayed());
     Assert.assertTrue(filterPriceRangeText.isDisplayed());
->>>>>>> refs/remotes/origin/fatih
+ 
 
 
 
@@ -441,7 +449,29 @@ public void filterFormTextleri(){
         Assert.assertTrue(pipeRepairLocation.isDisplayed());
         Assert.assertTrue(drainCleaningLocation.isDisplayed());
     }
+
 */
+
+
+
+    public void formBilgileri(String location,String keyword) throws InterruptedException {
+
+
+       filterLocationTextBox.click();
+       filterLocationTextBox.sendKeys(ConfigReader.getProperty(location));
+       sortByDropDownMenuPriceLowToHigh.click();
+       registerPage. beklemeSuresi();
+       filterKeywordtextBox.sendKeys(ConfigReader.getProperty(keyword));
+
+       filterSubCategoryTextBox.click();
+
+       actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).perform();
+
+
+
+        registerPage.beklemeSuresi();
+    }
+
 }
 
 

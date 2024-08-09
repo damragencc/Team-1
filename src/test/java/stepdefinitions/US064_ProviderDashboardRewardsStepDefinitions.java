@@ -1,19 +1,23 @@
 package stepdefinitions;
 
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import pages.components.HeaderComp;
 import io.cucumber.java.en.Given;
-import pages.components.ProviderDashboardRewards;
-import pages.components.RegisterPage;
+import pages.ProviderDashboardRewardsPage;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US064_ProviderDashboardRewardsStepDefinitions {
     HeaderComp headerComp = new HeaderComp();
-    ProviderDashboardRewards providerDashboardRewards = new ProviderDashboardRewards();
+    ProviderDashboardRewardsPage providerDashboardRewards = new ProviderDashboardRewardsPage();
+    Actions actions=new Actions(Driver.getDriver());
+
 
     @Given("Dashboard linkinin gorunur oldugunu dogrular")
     public void dashboard_linkinin_gorunur_oldugunu_dogrular() {
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
         Assert.assertTrue(providerDashboardRewards.providerDashboard.isDisplayed());
     }
 
@@ -58,29 +62,58 @@ public class US064_ProviderDashboardRewardsStepDefinitions {
     }
     @Given("Acilan formda Service,Reward type,Discount,Message box ve drop down menülerin goruntulendigi dogrulanir")
     public void acilan_formda_service_reward_type_discount_message_box_ve_drop_down_menülerin_goruntulendigi_dogrulanir() {
-        Assert.assertTrue(providerDashboardRewards.addRewardsFormCancelButton.isDisplayed());
-        //Assert.assertTrue(providerDashboardRewards.addRewardsFormCancelButton.isEnabled());
-
-        Assert.assertTrue(providerDashboardRewards.addRewardsFormAddButton.isDisplayed());
-        //Assert.assertTrue(providerDashboardRewards.addRewardsFormAddButton.isEnabled());
-
-        Assert.assertTrue(providerDashboardRewards.addRewardsFormDismissButton.isDisplayed());
-
-        Assert.assertTrue(providerDashboardRewards.addRewardsFormService.isDisplayed());
-        //Assert.assertTrue(providerDashboardRewards.addRewardsFormService.isEnabled());
-
-        Assert.assertTrue(providerDashboardRewards.addRewardsFormRewardType.isDisplayed());
-        //Assert.assertTrue(providerDashboardRewards.addRewardsFormRewardType.isEnabled());
-
+        ReusableMethods.bekle(3);
         Assert.assertTrue(providerDashboardRewards.addRewardsFormDiscount.isDisplayed());
-        //Assert.assertTrue(providerDashboardRewards.addRewardsFormDiscount.isEnabled());
-
+        providerDashboardRewards.addRewardsFormDiscount.sendKeys("30");
+        ReusableMethods.bekle(3);
         Assert.assertTrue(providerDashboardRewards.addRewardsFormMessages.isDisplayed());
-        //Assert.assertTrue(providerDashboardRewards.addRewardsFormMessages.isEnabled());
-
-
+        ReusableMethods.bekle(3);
+        providerDashboardRewards.addRewardsFormMessages.sendKeys(" ");
+        Assert.assertTrue(providerDashboardRewards.addRewardsFormCancelButton.isDisplayed());
+        Assert.assertTrue(providerDashboardRewards.addRewardsFormAddButton.isDisplayed());
+        Assert.assertTrue(providerDashboardRewards.addRewardsFormDismissButton.isDisplayed());
+        Assert.assertTrue(providerDashboardRewards.addRewardsFormService.isDisplayed());
+        Assert.assertTrue(providerDashboardRewards.addRewardsFormRewardType.isDisplayed());
 
 
 
     }
+    @Given("formu kapatir")
+    public void formu_kapatir() {
+
+        providerDashboardRewards.addRewardsFormCancelButton.click();
+    }
+
+    @Given("Acilan formda discount boxı ve message boxu gecerli veri ile reward tanimlanir")
+    public void acilan_formda_discount_boxı_ve_message_boxu_gecerli_veri_ile_reward_tanimlanir() {
+        Select selectRewardType=new Select(providerDashboardRewards.addRewardsFormRewardType);
+        selectRewardType.selectByVisibleText("Discount");
+        providerDashboardRewards.addRewardsFormDiscount.sendKeys("20");
+        providerDashboardRewards.addRewardsFormMessages.sendKeys("Here your present is ,have a good day!");
+        ReusableMethods.bekle(4);
+        providerDashboardRewards.addRewardsFormCancelButton.click();
+
+    }
+
+    @Given("Acilan formda discount boxı ve message boxu gecersiz veri ile reward tanimlanamadigi dogrulanir")
+    public void acilan_formda_discount_boxı_ve_message_boxu_gecersiz_veri_ile_reward_tanimlanamadigi_dogrulanir() {
+        Select selectRewardType=new Select(providerDashboardRewards.addRewardsFormRewardType);
+        selectRewardType.selectByVisibleText("Discount");
+        providerDashboardRewards.addRewardsFormDiscount.sendKeys("500");
+        providerDashboardRewards.addRewardsFormMessages.sendKeys("Here your present is ,have a good day!");
+        ReusableMethods.bekle(4);
+        providerDashboardRewards.addRewardsFormCancelButton.click();
+    }
+    @Given("View Reward History butonuna tiklanir")
+    public void view_reward_history_butonuna_tiklanir() {
+       providerDashboardRewards.rewardsHistoryViewLink.click();
+    }
+
+    @Given("Next ve previous tuslarının aktif ve tiklanabilir oldugu dogrulanir")
+    public void next_ve_previous_tuslarının_aktif_ve_tiklanabilir_oldugu_dogrulanir() {
+    Assert.assertTrue(providerDashboardRewards.previousButton.isDisplayed());
+    Assert.assertTrue(providerDashboardRewards.nextButton.isDisplayed());
+
+    }
+
 }

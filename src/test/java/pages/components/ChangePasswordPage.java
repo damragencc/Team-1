@@ -1,5 +1,6 @@
 package pages.components;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,6 +9,7 @@ import utilities.Driver;
 public class ChangePasswordPage {
 
     public ChangePasswordPage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -27,6 +29,23 @@ public class ChangePasswordPage {
 
     @FindBy(xpath = "//button[@id='form_submit']")
     public WebElement buttonChange; // Change Password sayfasindaki Change butonu
+
+
+    public void changePasswordVisible(){
+
+        Assert.assertTrue((textboxCurrentPassword.isDisplayed()));
+        Assert.assertTrue((textboxNewPassword.isDisplayed()));
+        Assert.assertTrue((textboxConfirmPassword.isDisplayed()));
+
+    }
+
+    public  void changePasswordEnable(){
+
+        Assert.assertTrue((textboxCurrentPassword.isEnabled()));
+        Assert.assertTrue((textboxNewPassword.isEnabled()));
+        Assert.assertTrue((textboxConfirmPassword.isEnabled()));
+
+    }
 
 
 

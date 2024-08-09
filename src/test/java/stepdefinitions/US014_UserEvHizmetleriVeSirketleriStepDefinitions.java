@@ -171,20 +171,7 @@ public  class US014_UserEvHizmetleriVeSirketleriStepDefinitions  {
     @When("{string}'da {string},{string},{string},{string},{string},{string} bilgilerini girer")
     public void da_sort_by_keyword_price_range_bilgilerini_girer(String form, String location, String sortBy,String keyword, String Categories,String subCategory,String priceRange) throws InterruptedException {
 
-             testPage.filterLocationTextBox.click();
-             testPage.filterLocationTextBox.sendKeys(ConfigReader.getProperty(location));
-             testPage.filterSortByTextBox.click();
-             testPage.sortByDropDownMenuPriceLowToHigh.click();
-             registerPage.beklemeSuresi();
-             testPage.filterKeywordtextBox.sendKeys(ConfigReader.getProperty(keyword));
-
-             testPage.filterSubCategoryTextBox.click();
-
-         actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).perform();
-
-
-
-          registerPage.beklemeSuresi();
+             testPage.formBilgileri(location,keyword);
 
     }
 

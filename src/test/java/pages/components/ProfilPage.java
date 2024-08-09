@@ -11,7 +11,7 @@ public class ProfilPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//*[@class='dropdown-item'][1]")
+    @FindBy(xpath = "//*[@class='dropdown-item'][1]") //a[(text()='Dashboard')]
     public WebElement iconDashboard; //profil resmi dropdown menusundeki dashboard icon
 
     @FindBy(xpath = "//*[@class='dropdown-item'][2]")
@@ -34,6 +34,10 @@ public class ProfilPage {
 
     @FindBy(xpath = "//*[@class='dropdown-item'][8]")
     public WebElement iconLogout; //profil resmi dropdown menusundeki Logout icon
+
+    @FindBy(xpath = "//a[text()='Booking List']")
+    public WebElement iconBookingList; // profil resmi provider dropdown menusundeki Booking List icon
+
 
 
 
