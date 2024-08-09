@@ -13,7 +13,7 @@ public class US012_UserCompanyFollow {
 
     @Given("User goes to {string}")
     public void kullanici_gider(String istenenUrlAdi) {
-        Driver.getDriver().get(ConfigReader.getProperty(istenenUrlAdi));
+    Driver.getDriver().get(ConfigReader.getProperty(istenenUrlAdi));
     }
 
     @Then("User clicks on the {string} tab in the header section")

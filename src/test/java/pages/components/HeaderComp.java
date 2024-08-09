@@ -139,5 +139,36 @@ public class HeaderComp {
         passwordBox.sendKeys(password);
         passwordEnterButton.click();
     }
+
+    @FindBy(xpath = "(//*[@class='text-muted'])[21]")
+    public WebElement loginText;
+
+    @FindBy(xpath = "//div[@id='otp_final_div']//p[@class='text-muted'][normalize-space()='Verification your account']")
+    public WebElement passwordText;
+
+    @FindBy(xpath = "//a[@id='user_forgot_pwd']")
+    public WebElement clickToGetLink;
+
+    @FindBy(xpath = "//*[@id='mailid_error']")
+    public WebElement mailHataText;
+
+    @FindBy(xpath = "//*[@id='otp_error_msg_login']")
+    public WebElement passwordHataText;
+
+    public void mailGiris(String mail) {
+        emailIdBox.sendKeys(mail);
+        ReusableMethods.wait(1);
+        emailIdBox.sendKeys(" ", Keys.ENTER);
+        ReusableMethods.wait(1);
+        emailLoginButton.click();
+    }
+
+    public void passwordGiris(String password) {
+        emailIdBox.sendKeys(" ", Keys.ENTER);
+        ReusableMethods.wait(1);
+        emailLoginButton.click();
+        passwordBox.sendKeys(password);
+        passwordEnterButton.click();
+    }
 }
 
