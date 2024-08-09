@@ -16,6 +16,7 @@ import pages.components.MostPopularServicesMainPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.UserReader;
 
 public class US057_UserServisPaymentStepDefinitions {
     UserServicePaymentPage userServicePaymentPage=new UserServicePaymentPage();
@@ -28,22 +29,24 @@ public class US057_UserServisPaymentStepDefinitions {
     public void odeme_sayfasina_gelir() {
         Driver.getDriver().get(ConfigReader.getProperty("masterUrl"));
         headerComp.performLogIn
-                (ConfigReader.getProperty("userEmail.selin"), ConfigReader.getProperty("userPassword.selin"));
+                (UserReader.getUser("userEmail.selin"), UserReader.getUser("userPassword.selin"));
         ReusableMethods.wait(3);
-        ReusableMethods.scrollToElement(mostPopularServices.mainPageMostPopularServicesViewAllButton);
-        ReusableMethods.wait(2);
+        //ReusableMethods.scrollToElement(mostPopularServices.mainPageMostPopularServicesViewAllButton);
+        ReusableMethods.scrollToElement(userServicePaymentPage.mainPageMostPopularServicesoList.get(10));
+        ReusableMethods.wait(3);
         userServicePaymentPage.mainPageMostPopularServicesoList.get(10).click();
         userServicePaymentPage.bookServiceButton.click();
-        ReusableMethods.wait(2);
-        userMyBookingsPage.notesBox.click();
+        ReusableMethods.wait(3);
+        //userMyBookingsPage.notesBox.click();
+        ReusableMethods.scrollToElement(userMyBookingsPage.notesBox);
         ReusableMethods.wait(3);
 
         Select selectStaffDD=new Select(userMyBookingsPage.staffDD);
-        selectStaffDD.selectByIndex(1);
+        selectStaffDD.selectByIndex(3);
 
         userMyBookingsPage.dateBox.clear();
         userMyBookingsPage.dateBox.sendKeys("02-09-2024"+ Keys.ESCAPE+Keys.ENTER+Keys.ENTER);
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         userMyBookingsPage.okayButton.sendKeys(Keys.ENTER);
 
         /*Select selectTimeSlotDD=new Select(userMyBookingsPage.timeSlot2);
@@ -53,7 +56,7 @@ public class US057_UserServisPaymentStepDefinitions {
         JSUtilities.clickWithJS(Driver.getDriver(),userMyBookingsPage.modalOkay);
         JSUtilities.clickWithJS(Driver.getDriver(),userMyBookingsPage.okayButton);*/
         userServicePaymentPage.proceedToPaymentButton.click();
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         userMyBookingsPage.okayButton.sendKeys(Keys.ENTER,Keys.ENTER);
 
 
@@ -62,6 +65,7 @@ public class US057_UserServisPaymentStepDefinitions {
     }
     @Given("Payment type stripe secilir")
     public void payment_type_stripe_secilir() {
+        ReusableMethods.wait(3);
     userServicePaymentPage.stripeRadioButton.click();
     }
 
@@ -91,18 +95,18 @@ public class US057_UserServisPaymentStepDefinitions {
     @Given("Service booking modalın {string} ,{string},{string},{string} alanina gecerli veri girilir")
     public void service_booking_modalın_alanina_gecerli_veri_girilir(String email, String cardNo, String mmYY, String CVC) {
 
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         actions.sendKeys(email).perform();
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         actions.sendKeys(Keys.TAB).perform();
         actions.sendKeys(cardNo).perform();
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         actions.sendKeys(Keys.TAB).perform();
         actions.sendKeys(mmYY).perform();
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         actions.sendKeys(Keys.TAB).perform();
         actions.sendKeys(CVC).perform();
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         actions.sendKeys(Keys.TAB,Keys.ENTER).perform();
         ReusableMethods.wait(10);
         Assert.assertTrue(userServicePaymentPage.paymentSuccessText.isDisplayed());

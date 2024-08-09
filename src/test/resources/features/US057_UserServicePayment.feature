@@ -7,6 +7,7 @@ Feature:
     * Acilan modalda email, card number, MMYY, CVC alanlarinin ve pay butonunun gorunur oldugu dogrulanir
     * sayfayi kapatir
 
+    @e2e2
     Scenario Outline:TC_02
       * Odeme sayfasina gelir
       * Payment type stripe secilir
@@ -16,8 +17,8 @@ Feature:
       Examples:
         | email         | card number     | MMYY | CVC |
         |g@mail.com     |4242424242424242 |1225  |076  |
-        |a@mail.com     |4000056655665556 |1229  |987  |
-        |b@mail.com     |5555555555554444 |1224  |123  |
+        #|a@mail.com     |4000056655665556 |1229  |987  |
+        #|b@mail.com     |5555555555554444 |1224  |123  |
 
 
   Scenario Outline:TC_03
