@@ -30,5 +30,38 @@ public class AppoitmentPage {
     @FindBy(xpath = "//*[@class='swal-button swal-button--confirm']")
     public WebElement okayButton;
 
+    @FindBy(xpath = "//button[@id='submit_button_id']")
+    public WebElement paymentButton;
+
+    @FindBy(xpath = "//a[@class='btn btn-danger cancelappt appoint-btncls']")
+    public WebElement cancelAppt;
+
+    @FindBy(xpath = "//input[@id='chkbox_1']")
+    public WebElement checkBox;
+
+    @FindBy(xpath = "//i[@class='fas fa-plus-circle']")
+    public WebElement addMore;
+
+    @FindBy(xpath = "//a[@class='remove_guest']")
+    public WebElement removeServices;
+
+    @FindBy(xpath = "//input[@id='chkbox_2']")
+    public WebElement yeniServisCardCheckBox;
+
+    @FindBy(xpath = "//div[@class='toast toast-success']")
+    public WebElement successText;
+
+    @FindBy(xpath = "//*[@id='guest_ser1']")
+    public WebElement servicesBox;
+
+    @FindBy(xpath = "//select[@id='guest_ser1']")
+    public WebElement staffsBox;
+
+    @FindBy(xpath = "//select[@id='guest_ser1']")
+    public WebElement timeBox;
+
+    @FindBy(xpath = "(//*[text()='Personalized Fitness Programs'])[2]")
+    public WebElement fitnessp;
+
 
 }

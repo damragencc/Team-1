@@ -13,7 +13,7 @@ public class US19_UserBusinessControl { // .java uzantısını kaldırdım
 
     @Given("User goes to {string}")
     public void kullanici_gider(String istenenUrlAdi) {
-        Driver.getDriver().get(ConfigReader.getProperty(istenenUrlAdi));
+    Driver.getDriver().get(ConfigReader.getProperty(istenenUrlAdi));
     }
 
     @Given("User click on the {string} button in the Header section")
