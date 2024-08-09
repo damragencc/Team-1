@@ -1,5 +1,6 @@
+@Mehmet
 Feature: As a registered user (provider), I want to have an area where I can see and manage my employees.
-  @Mehmet
+
   Scenario: TC01 The Staffs link appears in the Provider Dashboard sidebar and must be active.
 
     * Kullanici "masterUrl" adresine gider
@@ -59,3 +60,4 @@ Feature: As a registered user (provider), I want to have an area where I can see
     * My Staffs sayfasinda yeni calisan ekleyebilmek icin Add Staff butonu gorunur ve aktif olmalidir.
     * Add Staff butonuna tiklandiginda acilan sayfada Basic Information yazisinin goruldugu dogrulanmalidir.
     * Sayfa kapanir
+

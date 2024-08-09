@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.components.HeaderComp;
 
+import pages.components.MovingTransportationPage;
 import pages.components.RegisterPage;
 import pages.components.TestPage;
 import utilities.ConfigReader;
@@ -18,6 +19,7 @@ public class US062_ProviderDashboardSidebarStaffsTestStepdefinitions {
     TestPage testPage = new TestPage();
     RegisterPage registerPage = new RegisterPage();
     Actions actions = new Actions(Driver.getDriver());
+    MovingTransportationPage movingTransportationPage=new MovingTransportationPage();
 
     //TC01
     @Given("Kullanici {string} adresine gider")
@@ -100,17 +102,10 @@ public class US062_ProviderDashboardSidebarStaffsTestStepdefinitions {
     @Given("ilgili personelin mevcut tel numarasi {int} iken {int} olarak degistirilip Next butonuna tiklanir.")
     public void ilgili_personelin_mevcut_tel_numarasi_iken_olarak_degistirilip_next_butonuna_tiklanir(Integer int1, Integer int2) {
         actions.moveToElement(testPage.mobileNoKutusu).perform();
-        //testPage.mobileNoKutusu.click();
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
-        testPage.mobileNoKutusu.sendKeys(Keys.BACK_SPACE);
+        testPage.mobileNoKutusu.click();
+        for (int i = 0; i < 10; i++) {
+            actions.sendKeys(Keys.BACK_SPACE).perform();
+        }
         testPage.mobileNoKutusu.sendKeys("1111111111");
         actions.moveToElement(testPage.nextButonu).perform();
         testPage.nextButonu.click();
@@ -132,7 +127,7 @@ public class US062_ProviderDashboardSidebarStaffsTestStepdefinitions {
 
     @Given("Acilan sayfada Overview yazisinin gorundugu dogrulanir.")
     public void acilan_sayfada_overview_yazisinin_gorundugu_dogrulanir() {
-        Assert.assertTrue(testPage.overviewButonu.isDisplayed());
+        Assert.assertTrue(movingTransportationPage.overviewYazisi.isDisplayed());
     }
 
     @Given("My Staffs sayfasinda mevcut personellerden birinci siradaki personeli silmek icin action kismindan cop kutusu ikonuna tiklanir.")
@@ -161,3 +156,4 @@ public class US062_ProviderDashboardSidebarStaffsTestStepdefinitions {
         Assert.assertTrue(testPage.basicInformationYazisi.isDisplayed());
     }
 }
+
