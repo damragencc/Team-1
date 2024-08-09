@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.List;
 
@@ -220,7 +221,7 @@ public class TestPage {
     @FindBy(xpath = "//*[text()='Keyword']")
     public WebElement filterKeywordText;
 
-    @FindBy(xpath = "//*[text()='Categories']")
+    @FindBy(xpath = "(//*[text()='Categories'])[1]")
     public WebElement filterCategoriesText;
 
     @FindBy(xpath = "//*[text()='Sub Category']")
@@ -251,14 +252,13 @@ public class TestPage {
 /*
 
     @FindBy(xpath = "//*[text()='Search']")
-    public WebElement searchButonu;
+    public WebElement searchButonuu;
 
 
 
 
 
-    @FindBy(xpath = "//*[@id='filter_search']")
-    public WebElement filterIconu;
+
 
     @FindBy(xpath = "//*[text()='Location']")
     public WebElement filterLocation;
@@ -279,7 +279,24 @@ public class TestPage {
     public WebElement filterPriceRange;
 
 
-    //Filter iconu Form Bilgileri TextBox Bilgileri
+    @FindBy(xpath = "(//*[text()='Price Low to High'])[2]")
+    public WebElement sortByDropDownMenuPriceLowToHigh;
+
+    @FindBy(xpath = "//*[@id='select2-categories-result-qfpa-1']")
+    public WebElement categoriesDropDownMenuHomeService;
+
+    @FindBy(xpath = "(//*[text()='Plumbing'])[3]")
+    public WebElement subCategoryDropDownMenuPlumbing;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -287,17 +304,11 @@ public class TestPage {
     @FindBy(xpath = "(//*[@id='service_location'])[1]")
     public WebElement filterLocationTextBox;
 
-    @FindBy(xpath = "(//*[text()='Sort By'])[3]")
-    public WebElement filterSortByTextBox;
 
-    @FindBy(xpath = "//*[@id='common_search']")
-    public WebElement filterKeywordtextBox;
 
-    @FindBy(xpath = "(//*[text()='All Categories'])[2]")
-    public WebElement filterAllCategoriesTextBox;
 
-    @FindBy(id = "select2-subcategories-container")
-    public WebElement filterSubCategoryTextBox;
+
+
 
 
 
@@ -307,12 +318,22 @@ public class TestPage {
 
 public void filterFormTextleri(){
 
+<<<<<<< HEAD
     filterLocationText.isDisplayed();
     filterSortByText.isDisplayed();
     filterKeywordText.isDisplayed();
     filterCategoriesText.isDisplayed();
     filterSubCategoryText.isDisplayed();
     filterPriceRangeText.isDisplayed();
+=======
+    Assert.assertTrue(filterLocationText.isDisplayed());
+    Assert.assertTrue(filterSortByText.isDisplayed());
+    Assert.assertTrue(filterKeywordText.isDisplayed());
+    ReusableMethods.bekle(2);
+    Assert.assertTrue(filterCategoriesText.isDisplayed());
+    Assert.assertTrue(filterSubCategoryText.isDisplayed());
+    Assert.assertTrue(filterPriceRangeText.isDisplayed());
+>>>>>>> refs/remotes/origin/fatih
 
 
 

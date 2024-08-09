@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import pages.components.ChangePasswordPage;
 import pages.components.HeaderComp;
+import pages.components.LoginLogoutPage;
 import pages.components.ProfilPage;
 import utilities.ConfigReader;
 import utilities.Driver;
