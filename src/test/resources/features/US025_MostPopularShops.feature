@@ -1,5 +1,6 @@
+@Mehmet
 Feature: As a user, I want there to be an area on the home page where I can review the most popular companies and make an appointment.
-  @Mehmet
+
   Scenario: TC01 The Most Popular Shops title should be visible in the homepage body section.
 
 
@@ -32,3 +33,4 @@ Feature: As a user, I want there to be an area on the home page where I can revi
     * View All ikonuna tiklandiginda ilgili sayfaya yonlendirmelidir.
     * Acilan sayfada Shops Found yazisinin gorundugu teyit edilmelidir.
     * Sayfa kapatilir
+

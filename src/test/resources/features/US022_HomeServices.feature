@@ -1,5 +1,6 @@
+@Mehmet
 Feature: As a user, I would like to have a page on the site where I can request services related to household chores.
-  @Mehmet
+
   Scenario: TC01 The Home Services title appears in the slider on the homepage and must be active.
 
     * Kullanici "masterUrl" adresine gider

@@ -1,5 +1,6 @@
+@Mehmet
 Feature: As a registered user, I would like to have an area where I can view the invoices of my completed reservations.
-  @Mehmet
+
   Scenario: TC01 The Invoices link in the Dashboard sidebar must be visible and active. When clicked, the relevant page should be taken.
 
     * Kullanici "masterUrl" adresine gider
