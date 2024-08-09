@@ -5,13 +5,13 @@ Feature: US_027
   homepage where I can review and contact nearby
   companies
 
+  @uk
   Scenario: TC_001 Verify 'nearest shop locations' text is visible
     Given Go to "masterUrl" url
     When  Select location as "29.749907" lat, "-95.358421" long
     Then  Verify "Nearest shops to your location" is visible
     And   Close driver
 
-    @sss
   Scenario Outline: TC_002 Verify company name, location information and 'visit store' must be visible on the slider.
     Given Go to "masterUrl" url
     Then  Scroll down to Nearest Shop

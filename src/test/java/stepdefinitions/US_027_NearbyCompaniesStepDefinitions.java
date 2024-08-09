@@ -97,7 +97,7 @@ public class US_027_NearbyCompaniesStepDefinitions {
 
 	@And("Click visit store button on {string}")
 	public void clickVisitStoreButtonOn(String storeName) {
-		int index = nearestShopsPage.getIndexOfStore(companyText);
+		int index = nearestShopsPage.getIndexOfStore(storeName);
 		if (index == -1)
 			Assert.fail("Fatal: Company Name Invalid, test case failed!");
 		nearestShopsPage.sliderShopVisitStoreList.get(index).click();

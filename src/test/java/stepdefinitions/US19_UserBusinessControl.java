@@ -11,12 +11,12 @@ public class US19_UserBusinessControl { // .java uzantısını kaldırdım
     HeaderComp headerComp = new HeaderComp();
     LoginLogoutPage loginLogoutPage= new LoginLogoutPage();
 
-    @Given("User goes to {string}")
+    /*@Given("User goes to {string}")
     public void kullanici_gider(String istenenUrlAdi) {
     Driver.getDriver().get(ConfigReader.getProperty(istenenUrlAdi));
-    }
-
-    @Given("User click on the {string} button in the Header section")
+    }*/
+  
+  @Given("User click on the {string} button in the Header section")
     public void userClickOnTheButtonInTheHeaderSection(String arg0) {
         headerComp.performLogIn(ConfigReader.getProperty("userEmail"), ConfigReader.getProperty("userPassword"));
     }

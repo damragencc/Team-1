@@ -8,6 +8,7 @@ Feature: As a registered user (provider),
     And   click on dashboard link
     Then  click on Service Offer History
 
+    @uk
   Scenario: Verify 'Service Offer History' list link is active and visible
     And  should see the Service Offer History link active and visible
       |https://qa.onlinemastermarket.com/service-offer-history|

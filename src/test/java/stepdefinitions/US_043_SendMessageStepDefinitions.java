@@ -23,6 +23,8 @@ public class US_043_SendMessageStepDefinitions {
 	public void sign_in_with_email_and_password(String mail, String password) {
 		headerComp = new HeaderComp();
 
+		ReusableMethods.wait(3);
+
 		headerComp.performLogIn(UserReader.getUser(mail),
 								UserReader.getUser(password));
 	}
@@ -30,7 +32,7 @@ public class US_043_SendMessageStepDefinitions {
 	@Then("Click on the profile icon in the upper right corner")
 	public void click_on_the_profile_icon_in_the_upper_right_corner() {
 		pageChat = new PageChat();
-
+		ReusableMethods.wait(1);
 		pageChat.iconUser.click();
 	}
 
