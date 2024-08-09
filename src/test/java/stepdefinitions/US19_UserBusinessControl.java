@@ -49,12 +49,24 @@ public class US19_UserBusinessControl { // .java uzantısını kaldırdım
     public void userWhenTheShopsIconIsClickedTheRelevantServicesShouldBeDisplayed() {
     LoginLogoutPage.businessServicesShop.click();
     LoginLogoutPage.shopFoundsText.isDisplayed();
-
-
     }
-
     @And("it is tested that the {string} icon is visible on the Service card")
     public void itIsTestedThatTheIconIsVisibleOnTheServiceCard(String visitStore) {
+    LoginLogoutPage.visitstore.click();
+    }
+    @Then("click on the cards, it must be verified that it goes to the relevant service")
+    public void clickOnTheCardsItMustBeVerifiedThatItGoesToTheRelevantService() {
+    LoginLogoutPage.shopDetailsText.isDisplayed();
+    }
+    @Given("User when the desired service is selected, {string}, {string}, {string}, {string} and general information should be accessible")
+    public void userWhenTheDesiredServiceIsSelectedAndGeneralInformationShouldBeAccessible(String shopDetail, String shopAvailability, String services, String numberOfServices) {
+    LoginLogoutPage.shopDetailsText.isDisplayed();
+    LoginLogoutPage.shopAvailabilityText.isDisplayed();
+    LoginLogoutPage.servicesText.isDisplayed();
+    }
 
+    @Given("Closes the page")
+    public void closesThePage() {
+        Driver.quitDriver();
     }
 }

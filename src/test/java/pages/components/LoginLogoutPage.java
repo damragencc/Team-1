@@ -55,6 +55,37 @@ public class LoginLogoutPage {
     @FindBy(xpath = "//*[@id='shop_count']")
     public WebElement shopsFoundText;
 
+    @FindBy(xpath = "(//*[text()='Visit Store '])[1]")
+    public WebElement visitStore; //login>businessService>visitStore
+
+    @FindBy(xpath = "//*[text()='Shop Details']")
+    public WebElement shopDetailsText; //login>businessService>visitStore>shopDetailsText
+
+    @FindBy(xpath = "//*[@class='card-title service-title']")
+    public WebElement shopAvailabilityText; // login>businessService>visitStore>shopAvailability
+
+    @FindBy(xpath = "(//*[@class='inner-tab-shop'])[2]")
+    public WebElement servicesText; //login>businessService>visitStore>shopAvailability
+
+    @FindBy(xpath = "//*[text()='Featured Shop']")
+    public WebElement featuredShop; // login>homepage
+
+    @FindBy(xpath = "(//*[@class='shop-location'])[3]")
+    public WebElement shopLocation; // Login>homepage>featuredShop>shopLocation
+
+    @FindBy(xpath = "//div[3]/div/div/div[2]/h3/a")
+    public WebElement shopName; //Login>homepage>featuredShop>shopName
+
+    @FindBy(xpath = "(//*[text()='Visit Store '])[3]")
+    public WebElement visitStoreText; //Login>homepage>featuredShop>shopName>visitStore
+
+    @FindBy(xpath = "//*[text()='Shop Details']")
+    public WebElement getShopDetailsText;
+
+    @FindBy(xpath = "(//*[@class='btn btn-viewall'])[1]")
+    public WebElement viewAllButton; //Login>homepage>featuredShop>shopName>viewAllButton
+
+
 
 
 }
