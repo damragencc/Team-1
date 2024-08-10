@@ -1,5 +1,6 @@
 Feature: [US_008] Bir kullanici olarak Kategoriler basligi altinda sitede bulunan tum şirket ve hizmetlerini kategoriler halinde gorebilmek istiyorum.
-  Background: Given Kullanıcı "masterUrl" anasayfasını ziyaret eder.
+  Background:
+    Given Kullanıcı "masterUrl" anasayfasını ziyaret eder.
 
   Scenario: [TC_01->US_08] Categories linkine tıklandığında kullanıcı kategoriler sayfasına yönlendirilmelidir.
 
